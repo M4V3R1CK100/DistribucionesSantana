@@ -15,17 +15,14 @@
 <!-- ============ HEADER ============ -->
 <header class="site-header" id="top">
   <div class="container header-inner">
-    <a href="#top" class="brand">
-      <!-- INSERTAR IMAGEN: si tienen logo, reemplazar brand-mark por <img src="logo.png" alt="Distribuciones Santana"> -->
-      <span class="brand-mark">DS</span>
-      <span class="brand-name">Distribuciones Santana</span>
+    <a href="index.html" class="brand">
+      <img src="assets/logo.png" alt="Distribuciones Santana" class="brand-logo">
     </a>
     <nav class="main-nav" id="main-nav">
-      <a href="#inicio">Inicio</a>
-      <a href="#nosotros">Nosotros</a>
-      <a href="#catalogo">Catálogo</a>
-      <a href="#ubicacion">Ubicación</a>
-      <a href="#contacto">Contacto</a>
+      <a href="index.html">Inicio</a>
+      <a href="nosotros.html">Nosotros</a>
+      <a href="productos.html">Productos</a>
+      <a href="contacto.html">Contacto</a>
     </nav>
     <a href="https://wa.me/593987980003?text=Hola%2C%20deseo%20solicitar%20una%20cotización" class="btn btn-primary nav-cta" target="_blank" rel="noopener">
       Escríbenos por WhatsApp
@@ -38,86 +35,170 @@
 
 <main>
 
-  <!-- ============ HERO / INICIO ============ -->
-  <section class="hero" id="inicio">
-    <!-- INSERTAR IMAGEN: fondo de almacén médico u hospitalario con overlay oscuro (opcional, ver nota en CSS .hero) -->
-    <div class="container hero-inner">
-      <div class="hero-copy">
-        <p class="eyebrow">Distribuciones Santana · Manta, Ecuador</p>
-        <h1>Distribución al por Mayor de Medicamentos e Insumos Médicos en Ecuador</h1>
-        <p class="hero-lede">
-          Abastecemos a clínicas y hospitales a nivel nacional con soluciones accesibles,
-          calidad garantizada y cumplimiento estricto bajo regulación sanitaria.
-        </p>
-        <div class="hero-actions">
-          <a href="#catalogo" class="btn btn-primary">Ver líneas de productos</a>
-          <a href="https://wa.me/593987980003?text=Hola%2C%20deseo%20solicitar%20una%20cotización" class="btn btn-ghost" target="_blank" rel="noopener">Contactar asesor</a>
-        </div>
-      </div>
-      <div class="hero-panel" aria-hidden="true">
-        <div class="manifest-card">
-          <div class="manifest-row">
-            <span class="manifest-tag">ARCSA</span>
-            <span>Certificación BPADT vigente</span>
-            <span class="manifest-status status-ok">Activa</span>
-          </div>
-          <div class="manifest-row">
-            <span class="manifest-tag">COB</span>
-            <span>Cobertura a nivel nacional</span>
-            <span class="manifest-status status-ok">Operativa</span>
-          </div>
-          <div class="manifest-row">
-            <span class="manifest-tag">DEST</span>
-            <span>Hospitales y clínicas</span>
-            <span class="manifest-status status-ok">Institucional</span>
+  <!-- ============ CARRUSEL ============ -->
+  <section class="carousel">
+    <div class="carousel-track">
+
+      <div class="carousel-slide">
+        <div class="carousel-content">
+          <span class="carousel-tag">Distribuciones Santana</span>
+          <h2>Distribución al por Mayor de Medicamentos e Insumos Médicos en Ecuador</h2>
+          <p>Abastecemos a clínicas y hospitales a nivel nacional con soluciones accesibles, calidad garantizada y cumplimiento estricto bajo regulación sanitaria.</p>
+          <div class="hero-actions">
+            <a href="productos.html" class="btn btn-primary">Ver líneas de productos</a>
+            <a href="https://wa.me/593987980003?text=Hola%2C%20deseo%20solicitar%20una%20cotización" class="btn btn-ghost" target="_blank" rel="noopener">Contactar asesor</a>
           </div>
         </div>
       </div>
+
+      <div class="carousel-slide">
+        <div class="carousel-content">
+          <span class="carousel-tag">Garantía regulatoria</span>
+          <h2>Certificación BPADT otorgada por ARCSA</h2>
+          <p>Operamos bajo los más estrictos estándares de control del sector sanitario, garantizando trazabilidad y condiciones óptimas de almacenamiento, distribución y transporte.</p>
+          <div class="hero-actions">
+            <a href="nosotros.html" class="btn btn-primary">Conocer más</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="carousel-slide">
+        <div class="carousel-content">
+          <span class="carousel-tag">Cobertura nacional</span>
+          <h2>Despacho a clínicas y hospitales en todo el Ecuador</h2>
+          <p>Desde nuestro centro de distribución en Manta, operamos con un sistema logístico que garantiza entregas oportunas a nivel nacional.</p>
+          <div class="hero-actions">
+            <a href="contacto.html" class="btn btn-primary">Ver cobertura</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="carousel-slide">
+        <div class="carousel-content">
+          <span class="carousel-tag">¿Necesitas abastecer tu institución?</span>
+          <h2>Solicita tu cotización al por mayor hoy mismo</h2>
+          <p>Atendemos requerimientos institucionales, licitaciones y órdenes de compra. Nuestro equipo comercial te responde en menos de 24 horas.</p>
+          <div class="hero-actions">
+            <a href="https://wa.me/593987980003?text=Hola%2C%20deseo%20solicitar%20una%20cotización" class="btn btn-primary" target="_blank" rel="noopener">Escríbenos por WhatsApp</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <button class="carousel-nav carousel-prev" aria-label="Diapositiva anterior">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+    </button>
+    <button class="carousel-nav carousel-next" aria-label="Siguiente diapositiva">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+    </button>
+    <div class="carousel-dots"></div>
+  </section>
+
+  <!-- ============ ESTADÍSTICAS ============ -->
+  <section class="section" style="padding: 56px 0;">
+    <div class="container">
+      <dl class="hero-stats" style="justify-content: center; gap: 64px;">
+        <div class="stat">
+          <dt>BPADT</dt>
+          <dd>certificación ARCSA</dd>
+        </div>
+        <div class="stat">
+          <dt>3</dt>
+          <dd>líneas de producto</dd>
+        </div>
+        <div class="stat">
+          <dt>24h</dt>
+          <dd>tiempo de respuesta</dd>
+        </div>
+        <div class="stat">
+          <dt>100%</dt>
+          <dd>cobertura nacional</dd>
+        </div>
+      </dl>
     </div>
   </section>
 
-  <!-- ============ NOSOTROS ============ -->
-  <section class="section" id="nosotros">
+  <!-- ============ CATEGORÍAS ============ -->
+  <section class="section section-alt" id="categorias">
     <div class="container">
       <div class="section-head">
-        <p class="eyebrow">Quiénes somos</p>
-        <h2>¿Quiénes Somos?</h2>
+        <p class="eyebrow">Líneas de producto</p>
+        <h2>¿Qué necesitas abastecer?</h2>
+        <p class="section-sub">Explora nuestras categorías. Para ver el detalle completo de cada línea, visita la página de Productos.</p>
       </div>
-      <div class="about-grid">
-        <p class="about-text">
-          Somos una distribuidora ecuatoriana especializada en el abastecimiento al por mayor
-          de medicamentos e insumos médicos para el sector hospitalario público y privado.
-          Nos enfocamos en conectar a las instituciones de salud con productos esenciales de
-          manera oportuna, asegurando la continuidad de la atención médica mediante una
-          gestión transparente, seria y eficiente.
-        </p>
-        <!-- INSERTAR IMAGEN: foto de equipo de trabajo o infraestructura médica limpia -->
-        <ul class="about-points">
-          <li>
-            <span class="point-num">01</span>
-            <div>
-              <h3>Misión</h3>
-              <p>Ofrecer precios competitivos y un servicio al cliente excepcional, garantizando un abastecimiento confiable, serio y oportuno que respalde la labor del sector salud y el bienestar de los pacientes.</p>
-            </div>
-          </li>
-          <li>
-            <span class="point-num">02</span>
-            <div>
-              <h3>Visión</h3>
-              <p>Ser la distribuidora médica líder a nivel nacional mediante el desarrollo de una infraestructura propia de importación directa de medicinas e insumos, bajo principios de confianza, honestidad y cumplimiento.</p>
-            </div>
-          </li>
-        </ul>
+
+      <div class="category-grid">
+
+        <a href="productos.html#medicamentos" class="category-card">
+          <div class="category-card-icon" aria-hidden="true">
+            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6">
+              <rect x="17" y="6" width="14" height="10" rx="1.5"/>
+              <path d="M20 16v6a4 4 0 0 0 4 4 4 4 0 0 0 4-4v-6"/>
+              <path d="M24 26v10"/>
+              <ellipse cx="24" cy="38" rx="10" ry="4"/>
+            </svg>
+          </div>
+          <div class="category-card-label">
+            <span>Medicamentos</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+          </div>
+        </a>
+
+        <a href="productos.html#dispositivos" class="category-card">
+          <div class="category-card-icon" aria-hidden="true">
+            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6">
+              <rect x="6" y="20" width="26" height="7" rx="1.5"/>
+              <path d="M32 20.5h6M32 26.5h6"/>
+              <path d="M38 21v5"/>
+              <path d="M10 20v-4M14 20v-4M18 20v-4"/>
+            </svg>
+          </div>
+          <div class="category-card-label">
+            <span>Dispositivos e Insumos</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+          </div>
+        </a>
+
+        <a href="productos.html#especializadas" class="category-card">
+          <div class="category-card-icon" aria-hidden="true">
+            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6">
+              <path d="M14 12c4-4 16-4 20 0 2 2 2 6-1 7-4 1.5-4 5-4 8v6a3 3 0 0 1-3 3H20a3 3 0 0 1-3-3v-6c0-3 0-6.5-4-8-3-1-3-5-1-7z"/>
+              <path d="M18 16h12"/>
+            </svg>
+          </div>
+          <div class="category-card-label">
+            <span>Bioseguridad</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+          </div>
+        </a>
+
+        <a href="productos.html#especializadas" class="category-card">
+          <div class="category-card-icon" aria-hidden="true">
+            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6">
+              <path d="M16 40l4-16M32 40l-4-16M12 24h24l-3-12H15z"/>
+              <path d="M20 12V8h8v4"/>
+            </svg>
+          </div>
+          <div class="category-card-label">
+            <span>Ortopedia</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+          </div>
+        </a>
+
+      </div>
+
+      <div class="catalog-cta">
+        <a href="productos.html" class="btn btn-primary">Ver todas las líneas de producto</a>
       </div>
     </div>
   </section>
 
-  <!-- ============ CERTIFICACIÓN Y CALIDAD ============ -->
-  <section class="section section-alt" id="certificacion">
+  <!-- ============ CERTIFICACIÓN (resumen) ============ -->
+  <section class="section">
     <div class="container">
       <div class="cert-banner">
         <div class="cert-badge" aria-hidden="true">
-          <!-- INSERTAR IMAGEN/ICONO: logotipo de ARCSA o sello de certificación BPADT, reemplazando este SVG -->
           <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
             <circle cx="32" cy="32" r="30" stroke="currentColor" stroke-width="2.5"/>
             <path d="M20 33L28 41L44 24" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
@@ -127,180 +208,10 @@
           <p class="eyebrow">Garantía regulatoria y calidad técnica</p>
           <h2>Certificación BPADT otorgada por ARCSA</h2>
           <p>
-            En Distribuciones Santana operamos bajo los más estrictos estándares de control
-            del sector sanitario en el Ecuador. Contamos con la certificación de Buenas
-            Prácticas de Almacenamiento, Distribución y Transporte (BPADT) otorgada por el
-            ARCSA, lo que garantiza la trazabilidad, las condiciones óptimas de temperatura,
-            el manejo técnico y la legitimidad de cada lote de medicamentos y dispositivos
-            médicos que entregamos a nuestros clientes.
+            Contamos con la certificación de Buenas Prácticas de Almacenamiento, Distribución y
+            Transporte (BPADT) otorgada por el ARCSA, que garantiza la trazabilidad y legitimidad
+            de cada lote que entregamos. <a href="nosotros.html" style="color: var(--c-navy); font-weight: 600; text-decoration: underline;">Conoce más sobre nuestra empresa →</a>
           </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ PROCESO DE COTIZACIÓN ============ -->
-  <section class="section" id="proceso">
-    <div class="container">
-      <div class="section-head">
-        <p class="eyebrow">Proceso</p>
-        <h2>¿Cómo solicitar tu cotización al por mayor?</h2>
-      </div>
-      <div class="process-grid">
-        <div class="process-step">
-          <div class="process-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-          </div>
-          <span class="process-num">01</span>
-          <h3>Explora las categorías</h3>
-          <p>Revisa nuestras líneas de insumos y medicamentos disponibles en la web.</p>
-        </div>
-        <div class="process-step">
-          <div class="process-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
-          </div>
-          <span class="process-num">02</span>
-          <h3>Contáctanos directamente</h3>
-          <p>Presiona el botón de contacto para comunicarte con nuestra área de ventas.</p>
-        </div>
-        <div class="process-step">
-          <div class="process-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
-          </div>
-          <span class="process-num">03</span>
-          <h3>Recibe tu proforma</h3>
-          <p>Envíanos tu listado de requerimientos y emitiremos una cotización personalizada con precios competitivos.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ CATÁLOGO ============ -->
-  <section class="section section-alt" id="catalogo">
-    <div class="container">
-      <div class="section-head">
-        <p class="eyebrow">Catálogo</p>
-        <h2>Líneas de Producto</h2>
-        <p class="section-sub">
-          Manejamos un portafolio estático enfocado en abastecimiento institucional continuo.
-          Para conocer marcas disponibles o formatos específicos, solicite atención personalizada.
-        </p>
-      </div>
-
-      <div class="catalog-cards">
-
-        <article class="catalog-card">
-          <div class="catalog-card-visual" style="--accent: var(--c-teal)" aria-hidden="true">
-            <!-- INSERTAR IMAGEN: medicamentos / ampollas / soluciones -->
-            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6">
-              <rect x="17" y="6" width="14" height="10" rx="1.5"/>
-              <path d="M20 16v6a4 4 0 0 0 4 4 4 4 0 0 0 4-4v-6"/>
-              <path d="M24 26v10"/>
-              <ellipse cx="24" cy="38" rx="10" ry="4"/>
-            </svg>
-          </div>
-          <div class="catalog-card-body">
-            <h3>Medicamentos Hospitalarios</h3>
-            <p>Distribución de medicamentos genéricos, de marca, soluciones parenterales y líneas de especialidad médica.</p>
-          </div>
-        </article>
-
-        <article class="catalog-card">
-          <div class="catalog-card-visual" style="--accent: var(--c-navy)" aria-hidden="true">
-            <!-- INSERTAR IMAGEN: jeringas / sondas / catéteres -->
-            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6">
-              <rect x="6" y="20" width="26" height="7" rx="1.5"/>
-              <path d="M32 20.5h6M32 26.5h6"/>
-              <path d="M38 21v5"/>
-              <path d="M10 20v-4M14 20v-4M18 20v-4"/>
-            </svg>
-          </div>
-          <div class="catalog-card-body">
-            <h3>Dispositivos Médicos Descartables</h3>
-            <p>Insumos esenciales, jeringas, catéteres, sondas, suturas y material de reposición periódica para quirófano y hospitalización.</p>
-          </div>
-        </article>
-
-        <article class="catalog-card">
-          <div class="catalog-card-visual" style="--accent: var(--c-teal)" aria-hidden="true">
-            <!-- INSERTAR IMAGEN: guantes / mascarillas -->
-            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6">
-              <path d="M14 12c4-4 16-4 20 0 2 2 2 6-1 7-4 1.5-4 5-4 8v6a3 3 0 0 1-3 3H20a3 3 0 0 1-3-3v-6c0-3 0-6.5-4-8-3-1-3-5-1-7z"/>
-              <path d="M18 16h12"/>
-            </svg>
-          </div>
-          <div class="catalog-card-body">
-            <h3>Material de Bioseguridad</h3>
-            <p>Guantes de examinación y quirúrgicos, mascarillas, batas descartables y prendas de protección clínica.</p>
-          </div>
-        </article>
-
-      </div>
-
-      <div class="catalog-cta">
-        <a href="https://wa.me/593987980003?text=Hola%2C%20deseo%20solicitar%20el%20portafolio%20completo" class="btn btn-primary" target="_blank" rel="noopener">
-          Solicitar Portafolio Completo por WhatsApp
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ UBICACIÓN Y LOGÍSTICA ============ -->
-  <section class="section" id="ubicacion">
-    <div class="container">
-      <div class="section-head">
-        <p class="eyebrow">Logística</p>
-        <h2>Cobertura y Centro de Distribución</h2>
-      </div>
-      <div class="location-grid">
-        <div class="location-copy">
-          <h3>Sede Principal</h3>
-          <p>Ave 108, Manta, Manabí, Ecuador.</p>
-          <h3>Alcance</h3>
-          <p>Operamos con un sistema de distribución logística con cobertura y despacho a clínicas y hospitales de todo el país.</p>
-        </div>
-        <div class="location-map">
-          <iframe
-            title="Mapa de ubicación — Manta, Ecuador"
-            src="https://maps.google.com/maps?q=-0.956274,-80.699128&z=16&output=embed&hl=es"
-            width="100%" height="100%" style="border:0; display:block;" loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
-            allowfullscreen>
-          </iframe>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ CONTACTO ============ -->
-  <section class="section section-alt" id="contacto">
-    <div class="container">
-      <div class="section-head">
-        <p class="eyebrow">Contacto</p>
-        <h2>Hable con un Asesor Comercial</h2>
-        <p class="section-sub">
-          Atendemos requerimientos institucionales, licitaciones y órdenes de compra al por mayor a nivel nacional.
-        </p>
-      </div>
-
-      <div class="contact-grid">
-        <div class="contact-card">
-          <h3>Teléfono / WhatsApp</h3>
-          <p>La forma más rápida de solicitar tu cotización.</p>
-          <a href="https://wa.me/593987980003?text=Hola%2C%20deseo%20solicitar%20una%20cotización" class="contact-link" target="_blank" rel="noopener">0987 980 003</a>
-        </div>
-        <div class="contact-card">
-          <h3>Correo Electrónico</h3>
-          <p>Para envío de órdenes de compra o documentación.</p>
-          <a href="mailto:sandmacias@yahoo.com" class="contact-link">sandmacias@yahoo.com</a>
-        </div>
-        <div class="contact-card">
-          <h3>Horario de Atención</h3>
-          <p>Lunes a Viernes<br>8:00 AM a 5:00 PM</p>
-        </div>
-        <div class="contact-card">
-          <h3>Sede Principal</h3>
-          <p>Ave 108, Manta, Manabí, Ecuador.</p>
         </div>
       </div>
     </div>
@@ -312,8 +223,7 @@
 <footer class="site-footer">
   <div class="container footer-inner">
     <div class="brand brand--footer">
-      <span class="brand-mark">DS</span>
-      <span class="brand-name">Distribuciones Santana</span>
+      <img src="assets/logo.png" alt="Distribuciones Santana" class="brand-logo" style="filter: brightness(0) invert(1); opacity: 0.92;">
     </div>
     <p class="footer-note">Distribución al por mayor de medicamentos e insumos médicos — Manta, Ecuador.</p>
     <p class="footer-copy">© 2026 Distribuciones Santana. Todos los derechos reservados. Manta, Ecuador.</p>
