@@ -762,7 +762,6 @@ button:focus-visible {
 .carousel {
   position: relative;
   overflow: hidden;
-  border-radius: 0;
 }
 
 .carousel-track {
@@ -773,30 +772,54 @@ button:focus-visible {
 .carousel-slide {
   position: relative;
   min-width: 100%;
-  min-height: 480px;
-  display: flex;
+  min-height: 520px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   align-items: center;
-  background: linear-gradient(120deg, var(--c-navy-deep), var(--c-navy) 60%, var(--c-teal) 130%);
+  background: var(--c-navy-deep);
   overflow: hidden;
 }
 
-.carousel-slide::before {
+/* Imagen de fondo en la mitad derecha */
+.carousel-slide-img {
+  position: absolute;
+  top: 0; right: 0;
+  width: 55%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+/* Gradiente que difumina la imagen hacia el color sólido del texto */
+.carousel-slide::after {
   content: '';
   position: absolute;
-  inset: 0;
-  background:
-    radial-gradient(circle 420px at 85% 20%, rgba(232, 175, 79, 0.18), transparent),
-    radial-gradient(circle 380px at 10% 90%, rgba(255,255,255,0.06), transparent);
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to right,
+    var(--c-navy-deep) 38%,
+    rgba(18, 39, 64, 0.92) 50%,
+    rgba(18, 39, 64, 0.55) 65%,
+    rgba(18, 39, 64, 0.1) 80%,
+    transparent 100%
+  );
+  z-index: 1;
+}
+
+/* Fallback cuando no hay imagen: gradiente sutil */
+.carousel-slide:not(:has(.carousel-slide-img))::after {
+  background: linear-gradient(120deg, var(--c-navy-deep), var(--c-navy) 60%, var(--c-teal) 130%);
 }
 
 .carousel-content {
   position: relative;
   z-index: 2;
-  max-width: 620px;
-  padding: 0 24px;
-  margin: 0 auto;
-  width: 100%;
+  padding: 56px 0 56px 7%;
   color: #fff;
+  max-width: 560px;
 }
 
 .carousel-tag {
@@ -1148,7 +1171,26 @@ button:focus-visible {
     right: 18px;
   }
 
-  .carousel-slide { min-height: 420px; }
+  .carousel-slide {
+    min-height: 420px;
+    grid-template-columns: 1fr;
+  }
+  .carousel-slide-img {
+    width: 100%;
+    opacity: 0.35;
+  }
+  .carousel-slide::after {
+    background: linear-gradient(
+      to bottom,
+      rgba(18,39,64,0.5) 0%,
+      rgba(18,39,64,0.85) 50%,
+      var(--c-navy-deep) 100%
+    );
+  }
+  .carousel-content {
+    padding: 48px 24px;
+    max-width: 100%;
+  }
   .carousel-nav { width: 36px; height: 36px; }
   .carousel-nav svg { width: 16px; height: 16px; }
   .carousel-prev { left: 12px; }
