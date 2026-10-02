@@ -791,14 +791,6 @@ button:focus-visible {
   display: block;
 }
 
-/* Gradiente que difumina la imagen hacia el color sólido del texto */
-.carousel-slide::after {
-  content: '';
-  position: absolute;
-  inset: 0;  
-  background:rgba(18, 39, 64, 0.35);
-  z-index: 1;
-}
 
 /* Fallback cuando no hay imagen: gradiente sutil */
 .carousel-slide:not(:has(.carousel-slide-img))::after {
