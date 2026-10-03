@@ -22,6 +22,7 @@
       <a href="index.html">Inicio</a>
       <a href="nosotros.html">Nosotros</a>
       <a href="productos.html">Productos</a>
+      <a href="especializadas.html">Especializadas</a>
       <a href="contacto.html">Contacto</a>
     </nav>
     <a href="https://wa.me/593987980003?text=Hola%2C%20deseo%20solicitar%20una%20cotización" class="btn btn-primary nav-cta" target="_blank" rel="noopener">
@@ -123,77 +124,116 @@
     </div>
   </section>
 
-  <!-- ============ CATEGORÍAS ============ -->
+  <!-- ============ CATEGORÍAS — MOSAIC ============ -->
   <section class="section section-alt" id="categorias">
     <div class="container">
       <div class="section-head">
         <p class="eyebrow">Líneas de producto</p>
         <h2>¿Qué necesitas abastecer?</h2>
-        <p class="section-sub">Explora nuestras categorías. Para ver el detalle completo de cada línea, visita la página de Productos.</p>
+        <p class="section-sub">Explora nuestras categorías. Haz clic para ver el detalle completo de cada línea.</p>
       </div>
 
-      <div class="category-grid">
+      <div class="category-mosaic">
 
-        <a href="productos.html#medicamentos" class="category-card">
+        <!-- Cuadrito 1: Antibióticos -->
+        <a href="productos.html#antibioticos" class="category-card cat-small">
+          <img src="assets/categories/antibioticos.jpg" alt="Antibióticos" class="category-card-img"
+               onerror="this.style.display='none'">
           <div class="category-card-icon" aria-hidden="true">
-            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6">
-              <rect x="17" y="6" width="14" height="10" rx="1.5"/>
-              <path d="M20 16v6a4 4 0 0 0 4 4 4 4 0 0 0 4-4v-6"/>
-              <path d="M24 26v10"/>
-              <ellipse cx="24" cy="38" rx="10" ry="4"/>
-            </svg>
+            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="24" cy="24" r="14"/><line x1="24" y1="16" x2="24" y2="32"/><line x1="16" y1="24" x2="32" y2="24"/></svg>
           </div>
           <div class="category-card-label">
-            <span>Medicamentos</span>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+            <span>Antibióticos</span>
+            <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
           </div>
         </a>
 
-        <a href="productos.html#dispositivos" class="category-card">
+        <!-- Cuadrito 2: Analgésicos -->
+        <a href="productos.html#analgesicos" class="category-card cat-small">
+          <img src="assets/categories/analgesicos.jpg" alt="Analgésicos y Antiinflamatorios" class="category-card-img"
+               onerror="this.style.display='none'">
           <div class="category-card-icon" aria-hidden="true">
-            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6">
-              <rect x="6" y="20" width="26" height="7" rx="1.5"/>
-              <path d="M32 20.5h6M32 26.5h6"/>
-              <path d="M38 21v5"/>
-              <path d="M10 20v-4M14 20v-4M18 20v-4"/>
-            </svg>
+            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M24 8C15.2 8 8 15.2 8 24s7.2 16 16 16 16-7.2 16-16S32.8 8 24 8z"/><path d="M16 24h16"/></svg>
           </div>
           <div class="category-card-label">
-            <span>Dispositivos e Insumos</span>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+            <span>Analgésicos y Antiinflamatorios</span>
+            <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
           </div>
         </a>
 
-        <a href="productos.html#especializadas" class="category-card">
+        <!-- Cuadrito 3: Psicotrópicos -->
+        <a href="productos.html#psicotropicos" class="category-card cat-small">
+          <img src="assets/categories/psicotropicos.jpg" alt="Psicotrópicos" class="category-card-img"
+               onerror="this.style.display='none'">
           <div class="category-card-icon" aria-hidden="true">
-            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6">
-              <path d="M14 12c4-4 16-4 20 0 2 2 2 6-1 7-4 1.5-4 5-4 8v6a3 3 0 0 1-3 3H20a3 3 0 0 1-3-3v-6c0-3 0-6.5-4-8-3-1-3-5-1-7z"/>
-              <path d="M18 16h12"/>
-            </svg>
+            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M24 10c-7.7 0-14 6.3-14 14 0 5.5 3.2 10.3 7.9 12.7V38h12.2v-1.3C34.8 34.3 38 29.5 38 24c0-7.7-6.3-14-14-14z"/><line x1="24" y1="38" x2="24" y2="42"/></svg>
           </div>
           <div class="category-card-label">
-            <span>Bioseguridad</span>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+            <span>Psicotrópicos</span>
+            <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
           </div>
         </a>
 
-        <a href="productos.html#especializadas" class="category-card">
+        <!-- Cuadrito 4: Medicamentos Generales -->
+        <a href="productos.html#generales" class="category-card cat-small">
+          <img src="assets/categories/generales.jpg" alt="Medicamentos Generales" class="category-card-img"
+               onerror="this.style.display='none'">
           <div class="category-card-icon" aria-hidden="true">
-            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6">
-              <path d="M16 40l4-16M32 40l-4-16M12 24h24l-3-12H15z"/>
-              <path d="M20 12V8h8v4"/>
-            </svg>
+            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="12" y="8" width="24" height="32" rx="3"/><line x1="18" y1="18" x2="30" y2="18"/><line x1="18" y1="24" x2="30" y2="24"/><line x1="18" y1="30" x2="24" y2="30"/></svg>
           </div>
           <div class="category-card-label">
-            <span>Ortopedia</span>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+            <span>Medicamentos Generales</span>
+            <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+          </div>
+        </a>
+
+        <!-- Cuadrito 5: Insumos Médicos -->
+        <a href="productos.html#insumos" class="category-card cat-small">
+          <img src="assets/categories/insumos.jpg" alt="Insumos Médicos" class="category-card-img"
+               onerror="this.style.display='none'">
+          <div class="category-card-icon" aria-hidden="true">
+            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M10 26h28M14 26v10h20V26"/><path d="M20 26v-8h8v8"/><path d="M24 10v6M21 13h6"/></svg>
+          </div>
+          <div class="category-card-label">
+            <span>Insumos Médicos</span>
+            <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+          </div>
+        </a>
+
+        <!-- Cuadrito 6: Línea Ginecológica -->
+        <a href="especializadas.html#ginecologia" class="category-card cat-small">
+          <img src="assets/categories/ginecologia.jpg" alt="Línea Ginecológica" class="category-card-img"
+               onerror="this.style.display='none'">
+          <div class="category-card-icon" aria-hidden="true">
+            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="24" cy="18" r="10"/><path d="M24 28v12M19 36h10"/></svg>
+          </div>
+          <div class="category-card-label">
+            <span>Línea Ginecológica DECATE</span>
+            <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+          </div>
+        </a>
+
+        <!-- Card GRANDE: Productos Insignia -->
+        <a href="especializadas.html#insignia" class="category-card cat-featured">
+          <img src="assets/categories/insignia.jpg" alt="Productos Insignia" class="category-card-img"
+               onerror="this.style.display='none'">
+          <div class="category-card-icon" aria-hidden="true">
+            <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M32 8l6 14h15l-12 9 5 14-14-10-14 10 5-14-12-9h15z"/></svg>
+          </div>
+          <div class="category-card-label">
+            <div class="cat-text">
+              <span>Productos Insignia — Importación Directa desde India</span>
+              <p class="cat-sub">Propofol · Ketorolaco · Paracetamol · RIVECA</p>
+            </div>
+            <span class="cat-badge">Importación Propia</span>
           </div>
         </a>
 
       </div>
 
       <div class="catalog-cta">
-        <a href="productos.html" class="btn btn-primary">Ver todas las líneas de producto</a>
+        <a href="productos.html" class="btn btn-primary">Ver catálogo general</a>
+        <a href="especializadas.html" class="btn btn-ghost" style="margin-left: 14px;">Ver línea especializada</a>
       </div>
     </div>
   </section>

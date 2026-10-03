@@ -899,59 +899,248 @@ button:focus-visible {
 /* ============================================
    CATEGORY GRID (Inicio → enlaza a Productos)
    ============================================ */
-.category-grid {
+/* ============================================
+   CATEGORY MOSAIC — estilo Sicmafarma
+   6 cuadritos (3 col × 2 fil) + 1 card grande
+   ============================================ */
+.category-mosaic {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 18px;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto auto;
+  gap: 14px;
 }
 
+/* Card grande de productos insignia: ocupa toda la fila inferior */
+.category-mosaic .cat-featured {
+  grid-column: 1 / -1;
+}
+
+/* Base de todas las cards */
 .category-card {
   position: relative;
   display: block;
   border-radius: 10px;
   overflow: hidden;
-  aspect-ratio: 4 / 3.1;
-  background: var(--c-panel);
-  border: 1px solid var(--c-line);
+  background: var(--c-navy-deep);
+  border: none;
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.category-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 20px 48px -16px rgba(18,39,64,0.4);
 }
 
+/* Cuadritos normales */
+.cat-small {
+  aspect-ratio: 4 / 3;
+}
+
+/* Card grande */
+.cat-featured {
+  height: 240px;
+}
+
+/* Imagen de fondo */
+.category-card-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transition: transform 0.4s ease;
+}
+.category-card:hover .category-card-img { transform: scale(1.05); }
+
+/* Overlay degradado para legibilidad del texto */
+.category-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    0deg,
+    rgba(18,39,64,0.88) 0%,
+    rgba(18,39,64,0.45) 55%,
+    rgba(18,39,64,0.1) 100%
+  );
+  z-index: 1;
+}
+
+/* Placeholder cuando no hay imagen */
 .category-card-icon {
   position: absolute;
   inset: 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--c-navy);
-  opacity: 0.85;
-  transition: transform 0.25s ease;
+  color: rgba(255,255,255,0.25);
+  z-index: 0;
 }
-.category-card-icon svg { width: 64px; height: 64px; }
+.category-card-icon svg { width: 56px; height: 56px; }
 
-.category-card:hover .category-card-icon { transform: scale(1.08); }
-
+/* Etiqueta de texto sobre la imagen */
 .category-card-label {
   position: absolute;
   left: 0; right: 0; bottom: 0;
-  background: linear-gradient(0deg, rgba(18,39,64,0.92), rgba(18,39,64,0));
-  padding: 36px 16px 14px;
+  z-index: 2;
+  padding: 14px 18px 16px;
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   justify-content: space-between;
   gap: 8px;
 }
+
 .category-card-label span {
   color: #fff;
   font-weight: 700;
-  font-size: 0.92rem;
+  font-size: 0.9rem;
+  line-height: 1.2;
 }
-.category-card-label svg {
+
+/* Card grande: texto más prominente */
+.cat-featured .category-card-label {
+  padding: 20px 28px 22px;
+  align-items: center;
+}
+.cat-featured .category-card-label span {
+  font-size: 1.15rem;
+}
+.cat-featured .category-card-label .cat-sub {
+  font-size: 0.85rem;
+  font-weight: 400;
+  color: rgba(255,255,255,0.75);
+  margin-top: 4px;
+}
+.cat-featured .category-card-label .cat-text { flex: 1; }
+
+/* Etiqueta dorada para la card insignia */
+.cat-badge {
+  background: var(--c-gold);
+  color: var(--c-navy-deep);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 5px 10px;
+  border-radius: 4px;
+  flex-shrink: 0;
+}
+
+.category-card-label svg.arrow {
   width: 16px;
   height: 16px;
   color: var(--c-gold);
   flex-shrink: 0;
   transition: transform 0.2s ease;
 }
-.category-card:hover .category-card-label svg { transform: translateX(3px); }
+.category-card:hover .arrow { transform: translateX(4px); }
+
+/* ============================================
+   PÁGINA ESPECIALIZADAS
+   ============================================ */
+.spec-hero {
+  background: linear-gradient(135deg, var(--c-navy-deep) 0%, var(--c-navy) 60%, var(--c-teal) 130%);
+  padding: 72px 0 64px;
+  color: #fff;
+}
+.spec-hero .eyebrow { color: var(--c-gold); }
+.spec-hero h1 { color: #fff; font-size: clamp(2rem, 3.5vw, 2.8rem); margin: 12px 0 18px; }
+.spec-hero p { color: rgba(255,255,255,0.82); max-width: 580px; font-size: 1.05rem; }
+
+.spec-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+  margin-top: 48px;
+}
+
+.spec-card {
+  background: #fff;
+  border: 1px solid var(--c-line);
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+.spec-card-head {
+  padding: 32px 32px 24px;
+  border-bottom: 1px solid var(--c-line);
+}
+.spec-card-head .eyebrow { margin-bottom: 8px; }
+.spec-card-head h2 { font-size: 1.35rem; margin-bottom: 12px; }
+.spec-card-head p { color: var(--c-ink-soft); font-size: 0.95rem; }
+
+.spec-card-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(232,175,79,0.1);
+  border: 1px solid rgba(232,175,79,0.4);
+  color: var(--c-gold-deep);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 6px 14px;
+  border-radius: 20px;
+  margin-bottom: 18px;
+}
+.spec-card-badge svg { width: 14px; height: 14px; }
+
+.spec-products {
+  padding: 24px 32px 28px;
+}
+.spec-products h3 {
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--c-ink-soft);
+  margin-bottom: 14px;
+}
+.spec-product-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.spec-product-list li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  background: var(--c-panel);
+  border-radius: 8px;
+  font-size: 0.94rem;
+}
+.spec-product-list li::before {
+  content: '';
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--c-teal);
+  flex-shrink: 0;
+}
+.spec-product-list li strong {
+  color: var(--c-navy-deep);
+  font-weight: 700;
+}
+.spec-product-list li span {
+  color: var(--c-ink-soft);
+  font-size: 0.86rem;
+}
+
+.spec-card-footer {
+  padding: 0 32px 28px;
+}
+
+/* Responsive especializadas */
+@media (max-width: 720px) {
+  .spec-grid { grid-template-columns: 1fr; }
+}
 
 /* ============================================
    FARMACOVIGILANCIA (banner, similar a cert-banner)
@@ -1106,7 +1295,8 @@ button:focus-visible {
   .catalog-cards { grid-template-columns: 1fr; }
   .location-grid { grid-template-columns: 1fr; }
   .location-map { height: 280px; }
-  .category-grid { grid-template-columns: repeat(2, 1fr); }
+  .category-mosaic { grid-template-columns: repeat(2, 1fr); }
+  .cat-featured { grid-column: 1 / -1; height: 200px; }
   .fv-banner { grid-template-columns: 1fr; text-align: center; padding: 36px 28px; }
   .fv-badge { margin: 0 auto; }
   .product-sublist { grid-template-columns: 1fr; }
@@ -1178,7 +1368,8 @@ button:focus-visible {
   .carousel-nav svg { width: 16px; height: 16px; }
   .carousel-prev { left: 12px; }
   .carousel-next { right: 12px; }
-  .category-grid { grid-template-columns: 1fr; }
+  .category-mosaic { grid-template-columns: 1fr; }
+  .cat-featured { grid-column: 1; height: 180px; }
   .product-group-head { flex-direction: column; align-items: flex-start; text-align: left; padding: 22px 20px; }
   .product-subitem { padding: 16px 20px; }
 }
