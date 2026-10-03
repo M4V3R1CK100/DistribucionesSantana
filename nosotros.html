@@ -49,50 +49,65 @@
   </section>
 
   <!-- ============ NOSOTROS / MISIÓN / VISIÓN ============ -->
-  <section class="section" id="nosotros" style="background: var(--c-navy-deep);">
-    <div class="container">
-      <div class="about-grid">
-        <div style="display: flex; gap: 24px; align-items: flex-start;">
-          <div style="width: 4px; min-height: 100%; background: var(--c-gold); border-radius: 2px; flex-shrink: 0; align-self: stretch;"></div>
+  <section class="about-hero" id="nosotros">
+    <!-- Imagen de fondo -->
+    <img src="assets/nosotros/fondo.jpg" alt="" class="about-hero-bg" aria-hidden="true"
+         onerror="this.style.display='none'">
+    <!-- Overlay azul oscuro -->
+    <div class="about-hero-overlay"></div>
+
+    <div class="container about-hero-inner">
+
+      <!-- IZQUIERDA: texto -->
+      <div class="about-hero-copy">
+        <p class="eyebrow" style="color: var(--c-gold);">Quiénes somos</p>
+        <h2 style="color: #fff; font-size: clamp(1.8rem, 3vw, 2.6rem); margin: 14px 0 28px;">
+          Distribución médica con compromiso institucional
+        </h2>
+        <div style="display: flex; gap: 20px; align-items: flex-start; margin-bottom: 28px;">
+          <div style="width: 4px; background: var(--c-gold); border-radius: 2px; flex-shrink: 0; align-self: stretch;"></div>
           <blockquote style="margin: 0; padding: 0;">
-            <p style="
-              font-family: var(--font-display);
-              font-size: clamp(1.2rem, 2vw, 1.55rem);
-              font-style: italic;
-              font-weight: 500;
-              color: #fff;
-              line-height: 1.55;
-              margin-bottom: 20px;
-            ">
-              "Conectamos a las instituciones de salud con los productos que necesitan,
-              de manera oportuna, seria y con la trazabilidad que el sector exige"
+            <p style="font-family: var(--font-display); font-size: clamp(1.05rem, 1.6vw, 1.25rem); font-style: italic; color: rgba(255,255,255,0.88); line-height: 1.6; margin-bottom: 14px;">
+              "Conectamos a las instituciones de salud con los productos que necesitan, de manera oportuna, seria y con la trazabilidad que el sector exige."
             </p>
-            <p style="
-              font-size: 0.85rem;
-              font-weight: 700;
-              letter-spacing: 0.06em;
-              text-transform: uppercase;
-              color: var(--c-gold);
-            ">Distribuciones Santana · Manta, Ecuador</p>
+            <p style="font-size: 0.8rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--c-gold);">
+              Distribuciones Santana · Manta, Ecuador
+            </p>
           </blockquote>
         </div>
-        <ul class="about-points">
-          <li>
-            <span class="point-num" style="color: var(--c-gold);">01</span>
+        <ul style="list-style: none; margin: 0 0 36px; padding: 0; display: flex; flex-direction: column; gap: 18px;">
+          <li style="display: flex; gap: 14px;">
+            <span style="color: var(--c-gold); font-family: var(--font-display); font-weight: 600; flex-shrink: 0; font-size: 1rem;">01</span>
             <div>
-              <h3 style="color: #fff;">Misión</h3>
-              <p style="color: rgba(255,255,255,0.65);">Ofrecer precios competitivos y un servicio al cliente excepcional, garantizando un abastecimiento confiable, serio y oportuno que respalde la labor del sector salud y el bienestar de los pacientes.</p>
+              <strong style="color: #fff; display: block; margin-bottom: 4px;">Misión</strong>
+              <p style="color: rgba(255,255,255,0.65); font-size: 0.92rem; margin: 0;">Ofrecer precios competitivos y un servicio al cliente excepcional, garantizando un abastecimiento confiable, serio y oportuno que respalde la labor del sector salud.</p>
             </div>
           </li>
-          <li>
-            <span class="point-num" style="color: var(--c-gold);">02</span>
+          <li style="display: flex; gap: 14px;">
+            <span style="color: var(--c-gold); font-family: var(--font-display); font-weight: 600; flex-shrink: 0; font-size: 1rem;">02</span>
             <div>
-              <h3 style="color: #fff;">Visión</h3>
-              <p style="color: rgba(255,255,255,0.65);">Ser la distribuidora médica líder a nivel nacional mediante el desarrollo de una infraestructura propia de importación directa de medicinas e insumos, bajo principios de confianza, honestidad y cumplimiento.</p>
+              <strong style="color: #fff; display: block; margin-bottom: 4px;">Visión</strong>
+              <p style="color: rgba(255,255,255,0.65); font-size: 0.92rem; margin: 0;">Ser la distribuidora médica líder a nivel nacional con importación directa de medicinas e insumos, bajo principios de confianza, honestidad y cumplimiento.</p>
             </div>
           </li>
         </ul>
+        <a href="contacto.html" class="btn btn-primary" style="background: var(--c-gold); color: var(--c-navy-deep);">
+          Contáctenos →
+        </a>
       </div>
+
+      <!-- DERECHA: grid de fotos -->
+      <div class="about-hero-photos">
+        <div class="about-photo-grid">
+          <img src="assets/nosotros/foto1.jpg" alt="Equipo Distribuciones Santana" class="about-photo-big"
+               onerror="this.style.background='rgba(255,255,255,0.08)'; this.removeAttribute('src')">
+          <img src="assets/nosotros/foto2.jpg" alt="Instalaciones" class="about-photo-small"
+               onerror="this.style.background='rgba(255,255,255,0.08)'; this.removeAttribute('src')">
+          <img src="assets/nosotros/foto3.jpg" alt="Bodega" class="about-photo-small"
+               onerror="this.style.background='rgba(255,255,255,0.08)'; this.removeAttribute('src')">
+        </div>
+      </div>
+
     </div>
   </section>
 
