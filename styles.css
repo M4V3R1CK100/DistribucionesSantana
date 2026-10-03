@@ -1174,15 +1174,15 @@ button:focus-visible {
 .trust-item:last-child { border-right: none; }
 
 .trust-icon {
-  width: 28px;
-  height: 28px;
+  width: 16px;
+  height: 16px;
   flex-shrink: 0;
   display: flex;
   align-items: center;
   justify-content: center;
   color: var(--c-gold);
 }
-.trust-icon svg { width: 16px; height: 16px; }
+.trust-icon svg { width: 14px; height: 14px; }
 
 .trust-item strong {
   color: #fff;
