@@ -1143,6 +1143,85 @@ button:focus-visible {
 }
 
 /* ============================================
+   TRUST STRIP — puntos de confianza
+   ============================================ */
+.trust-strip {
+  background: var(--c-navy-deep);
+  padding: 56px 0 60px;
+}
+
+.trust-title {
+  text-align: center;
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--c-gold);
+  margin-bottom: 36px;
+}
+
+.trust-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+}
+
+.trust-item {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  padding: 24px 28px;
+  border-right: 1px solid rgba(255,255,255,0.08);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+/* Quitar borde derecho en la última columna */
+.trust-item:nth-child(3n) { border-right: none; }
+/* Quitar borde inferior en la última fila */
+.trust-item:nth-child(n+4) { border-bottom: none; }
+
+.trust-icon {
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  border-radius: 10px;
+  background: rgba(232,175,79,0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--c-gold);
+}
+.trust-icon svg { width: 20px; height: 20px; }
+
+.trust-item strong {
+  display: block;
+  color: #fff;
+  font-size: 0.96rem;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+.trust-item span {
+  display: block;
+  color: rgba(255,255,255,0.62);
+  font-size: 0.86rem;
+  line-height: 1.5;
+}
+
+/* Responsive trust-grid */
+@media (max-width: 920px) {
+  .trust-grid { grid-template-columns: repeat(2, 1fr); }
+  .trust-item:nth-child(3n) { border-right: 1px solid rgba(255,255,255,0.08); }
+  .trust-item:nth-child(2n) { border-right: none; }
+  .trust-item:nth-child(n+5) { border-bottom: none; }
+  .trust-item:nth-child(n+4) { border-bottom: 1px solid rgba(255,255,255,0.08); }
+}
+@media (max-width: 560px) {
+  .trust-grid { grid-template-columns: 1fr; }
+  .trust-item { border-right: none !important; border-bottom: 1px solid rgba(255,255,255,0.08) !important; }
+  .trust-item:last-child { border-bottom: none !important; }
+}
+
+/* ============================================
    FARMACOVIGILANCIA (banner, similar a cert-banner)
    ============================================ */
 .fv-banner {
