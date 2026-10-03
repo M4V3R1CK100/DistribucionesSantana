@@ -63,7 +63,7 @@ if (navToggle && mainNav) {
   nextBtn.addEventListener('click', () => { goTo(current + 1); restartAutoplay(); });
 
   function startAutoplay() {
-    autoplayTimer = setInterval(() => goTo(current + 1), 6000);
+    autoplayTimer = setInterval(() => goTo(current + 1), 10000);
   }
   function restartAutoplay() {
     clearInterval(autoplayTimer);
