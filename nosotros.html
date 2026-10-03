@@ -36,15 +36,22 @@
 
 <main>
 
-  <!-- ============ PAGE HERO ============ -->
-  <section class="page-hero">
-    <div class="container">
-      <p class="eyebrow">Quiénes somos</p>
-      <h1>¿Quiénes Somos?</h1>
-      <p>
-        Somos una distribuidora ecuatoriana especializada en el abastecimiento al por mayor
-        de medicamentos e insumos médicos para el sector hospitalario público y privado.
-      </p>
+  <!-- ============ ENCABEZADO CON FOTO ============ -->
+  <section class="page-hero" style="background: var(--c-panel);">
+    <div class="container" style="display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center;">
+      <div>
+        <p class="eyebrow">Quiénes somos</p>
+        <h1 style="margin-top: 10px;">Distribuciones Santana</h1>
+        <p style="color: var(--c-ink-soft); margin-top: 14px; font-size: 1rem;">
+          Somos una distribuidora ecuatoriana especializada en el abastecimiento al por mayor
+          de medicamentos e insumos médicos para el sector hospitalario público y privado.
+        </p>
+      </div>
+      <div style="border-radius: 12px; overflow: hidden; height: 220px;">
+        <img src="assets/nosotros/header.jpg" alt="Distribuciones Santana"
+             style="width: 100%; height: 100%; object-fit: cover; display: block;"
+             onerror="this.parentElement.style.background='var(--c-line)'; this.style.display='none'">
+      </div>
     </div>
   </section>
 
@@ -60,8 +67,7 @@
 
       <!-- IZQUIERDA: texto -->
       <div class="about-hero-copy">
-        <p class="eyebrow" style="color: var(--c-gold);">Quiénes somos</p>
-        <h2 style="color: #fff; font-size: clamp(1.8rem, 3vw, 2.6rem); margin: 14px 0 28px;">
+        <h2 style="color: #fff; font-size: clamp(1.8rem, 3vw, 2.6rem); margin: 0 0 28px;">
           Distribución médica con compromiso institucional
         </h2>
         <div style="display: flex; gap: 20px; align-items: flex-start; margin-bottom: 28px;">
@@ -159,15 +165,6 @@
           </p>
         </div>
       </div>
-    </div>
-  </section>
-
-  <!-- ============ CTA FINAL ============ -->
-  <section class="section section-alt">
-    <div class="container" style="text-align: center;">
-      <h2 style="margin-bottom: 18px; font-size: clamp(1.4rem, 2vw, 1.8rem);">¿Listo para solicitar tu cotización?</h2>
-      <p style="color: var(--c-ink-soft); margin-bottom: 28px;">Atendemos requerimientos institucionales, licitaciones y órdenes de compra al por mayor a nivel nacional.</p>
-      <a href="https://wa.me/593987980003?text=Hola%2C%20deseo%20solicitar%20una%20cotización" class="btn btn-primary" target="_blank" rel="noopener">Escríbenos por WhatsApp</a>
     </div>
   </section>
 
