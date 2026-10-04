@@ -735,40 +735,7 @@ button:focus-visible {
 /* ============================================
    PRODUCT LINES — franjas por categoría
    ============================================ */
-.product-line {
-  padding: 56px 0;
-  border-bottom: 1px solid var(--c-line);
-  position: relative;
-  background-color: #fff;
-  overflow: hidden;
-}
-.product-line:last-of-type { border-bottom: none; }
-
-/* Imagen de fondo semitransparente */
-.product-line::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background-image: url('../assets/products-bg.jpg');
-  background-size: cover;
-  background-position: center;
-  opacity: 0.06;
-  z-index: 0;
-  pointer-events: none;
-}
-
-/* El contenido siempre por encima */
-.product-line > * { position: relative; z-index: 1; }
-
-.product-line.line-alt {
-  background-color: var(--c-panel);
-}
-
-/* Franjas alternas: imagen posicionada diferente para variedad */
-.product-line.line-alt::before {
-  opacity: 0.05;
-  background-position: center right;
-}
+/* product-line — estilos en bloque parallax más abajo */
 
 .product-line-inner {
   display: grid;
@@ -1093,31 +1060,32 @@ button:focus-visible {
    Franjas grises: color sólido que tapa la imagen
    ============================================ */
 
-/* Contenedor que tiene la imagen fija de fondo */
+/* Contenedor con imagen fija de fondo */
 .products-bg-wrapper {
-  position: relative;
   background-image: url('assets/products-bg.jpg');
   background-attachment: fixed;
   background-size: cover;
   background-position: center;
 }
 
-/* Franja blanca: semitransparente → deja ver la imagen */
+/* Franja blanca — deja ver la imagen de fondo a través */
 .product-line {
   padding: 56px 0;
-  border-bottom: 1px solid rgba(255,255,255,0.3);
+  border-bottom: 1px solid rgba(27,58,92,0.1);
   position: relative;
-  background: rgba(255, 255, 255, 0.88);
+  background: rgba(255, 255, 255, 0.82);
+  backdrop-filter: blur(1px);
 }
 .product-line:last-of-type { border-bottom: none; }
 
-/* Franja gris: sólida → tapa completamente la imagen */
+/* Franja gris/azul — completamente sólida, NO se ve la imagen */
 .product-line.line-alt {
-  background: rgba(238, 241, 244, 0.97);
+  background: #EEF1F4;
   border-bottom: 1px solid var(--c-line);
+  backdrop-filter: none;
 }
 
-/* El contenido siempre encima */
+/* Todo el contenido encima */
 .product-line > * { position: relative; z-index: 1; }
 
 /* ============================================
