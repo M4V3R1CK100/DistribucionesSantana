@@ -118,3 +118,38 @@ if (navToggle && mainNav) {
   const section = document.querySelector('.stats-section');
   if (section) observer.observe(section);
 })();
+
+// ============ Formulario de contacto (Formspree) ============
+(function initContactForm() {
+  const form = document.getElementById('contactForm');
+  if (!form) return;
+
+  form.addEventListener('submit', async function(e) {
+    e.preventDefault();
+    const btn = form.querySelector('button[type="submit"]');
+    const success = document.getElementById('formSuccess');
+
+    btn.textContent = 'Enviando...';
+    btn.disabled = true;
+
+    try {
+      const res = await fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { 'Accept': 'application/json' }
+      });
+
+      if (res.ok) {
+        form.reset();
+        success.style.display = 'block';
+        btn.textContent = '¡Enviado!';
+      } else {
+        btn.textContent = 'Error — intenta de nuevo';
+        btn.disabled = false;
+      }
+    } catch {
+      btn.textContent = 'Error — intenta de nuevo';
+      btn.disabled = false;
+    }
+  });
+})();
