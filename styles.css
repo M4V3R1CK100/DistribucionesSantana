@@ -738,9 +738,19 @@ button:focus-visible {
 .product-line {
   padding: 56px 0;
   border-bottom: 1px solid var(--c-line);
+  position: relative;
+  /* Patrón de cruces médicas sutiles en fondo blanco */
+  background-color: #fff;
+  background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none'%3E%3Crect x='18' y='12' width='4' height='16' rx='1' fill='%231B3A5C' opacity='0.04'/%3E%3Crect x='12' y='18' width='16' height='4' rx='1' fill='%231B3A5C' opacity='0.04'/%3E%3C/g%3E%3C/svg%3E");
+  background-size: 40px 40px;
 }
 .product-line:last-of-type { border-bottom: none; }
-.product-line.line-alt { background: var(--c-panel); }
+.product-line.line-alt {
+  /* Patrón de círculos/puntos sutiles en fondo gris */
+  background-color: var(--c-panel);
+  background-image: url("data:image/svg+xml,%3Csvg width='32' height='32' viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='16' cy='16' r='1.5' fill='%231B3A5C' opacity='0.06'/%3E%3C/svg%3E");
+  background-size: 32px 32px;
+}
 
 .product-line-inner {
   display: grid;
