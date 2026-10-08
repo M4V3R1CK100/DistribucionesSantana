@@ -3,12 +3,200 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Línea Especializada — Distribuciones Santana</title>
-<meta name="description" content="Distribuidores certificados de DECATE (línea ginecológica) e importadores directos de productos RIVECA desde India: Propofol, Ketorolaco y Paracetamol.">
+<title>Alianzas — Distribuciones Santa Ana</title>
+<meta name="description" content="Importadores directos de productos RIVECA desde India: Propofol, Ketorolaco y Paracetamol. Precios de origen, calidad certificada para el sector hospitalario.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
+<style>
+/* ---- ALIANZAS PAGE ---- */
+.alianzas-hero {
+  padding: calc(var(--header-h) + 60px) 0 56px;
+  background: var(--c-navy-deep);
+  text-align: center;
+}
+.alianzas-hero .eyebrow { color: var(--c-gold); }
+.alianzas-hero h1 { color: #fff; margin-top: 10px; font-size: clamp(2rem, 4vw, 3rem); }
+.alianzas-hero p {
+  color: rgba(255,255,255,0.72);
+  max-width: 620px;
+  margin: 18px auto 0;
+  font-size: 1.05rem;
+  line-height: 1.65;
+}
+
+/* RIVECA brand banner */
+.riveca-brand-bar {
+  background: var(--c-teal);
+  padding: 18px 0;
+}
+.riveca-brand-bar .container {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+.riveca-brand-bar .rib-badge {
+  background: rgba(255,255,255,0.15);
+  border: 1.5px solid rgba(255,255,255,0.35);
+  border-radius: 6px;
+  padding: 6px 14px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #fff;
+  white-space: nowrap;
+}
+.riveca-brand-bar p {
+  color: rgba(255,255,255,0.88);
+  font-size: 0.92rem;
+  line-height: 1.5;
+}
+
+/* PRODUCT ROW */
+.product-row {
+  padding: 72px 0;
+  border-bottom: 1px solid var(--c-line);
+}
+.product-row:last-of-type { border-bottom: none; }
+.product-row.alt { background: var(--c-panel); }
+
+.product-row-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 56px;
+  align-items: center;
+}
+.product-row.alt .product-row-inner { direction: rtl; }
+.product-row.alt .product-row-inner > * { direction: ltr; }
+
+/* Photo side */
+.product-photo-wrap {
+  border-radius: 12px;
+  overflow: hidden;
+  background: var(--c-line);
+  aspect-ratio: 4/3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.product-photo-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.product-photo-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  color: var(--c-ink-soft);
+  font-size: 0.85rem;
+  text-align: center;
+  padding: 24px;
+}
+.product-photo-placeholder svg {
+  width: 48px;
+  height: 48px;
+  opacity: 0.35;
+}
+
+/* Info side */
+.product-info {}
+.product-number {
+  font-family: var(--font-display);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--c-teal);
+  margin-bottom: 8px;
+}
+.product-info h2 {
+  font-size: clamp(1.5rem, 2.5vw, 2rem);
+  margin-bottom: 8px;
+}
+.product-spec-line {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--c-ink-soft);
+  letter-spacing: 0.02em;
+  margin-bottom: 20px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid var(--c-line);
+}
+.product-info p {
+  color: var(--c-ink-soft);
+  line-height: 1.7;
+  margin-bottom: 28px;
+}
+.product-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 32px;
+}
+.product-tag {
+  background: rgba(42,140,130,0.08);
+  border: 1px solid rgba(42,140,130,0.25);
+  color: var(--c-teal);
+  border-radius: 4px;
+  padding: 4px 12px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+/* Value props */
+.value-strip {
+  background: var(--c-navy-deep);
+  padding: 64px 0;
+}
+.value-strip-inner {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  text-align: center;
+}
+.value-item {}
+.value-item svg {
+  width: 40px;
+  height: 40px;
+  color: var(--c-gold);
+  margin-bottom: 14px;
+}
+.value-item h4 {
+  color: #fff;
+  font-size: 1rem;
+  margin-bottom: 8px;
+}
+.value-item p {
+  color: rgba(255,255,255,0.6);
+  font-size: 0.88rem;
+  line-height: 1.6;
+}
+
+/* CTA */
+.alianzas-cta {
+  padding: 72px 0;
+  text-align: center;
+  background: var(--c-paper);
+}
+.alianzas-cta h2 { margin-bottom: 14px; font-size: clamp(1.4rem, 2.5vw, 1.9rem); }
+.alianzas-cta p { color: var(--c-ink-soft); margin-bottom: 32px; max-width: 480px; margin-left: auto; margin-right: auto; }
+
+/* Responsive */
+@media (max-width: 860px) {
+  .product-row-inner { grid-template-columns: 1fr; gap: 32px; }
+  .product-row.alt .product-row-inner { direction: ltr; }
+  .product-photo-wrap { aspect-ratio: 16/9; }
+  .value-strip-inner { grid-template-columns: 1fr; gap: 28px; text-align: left; }
+  .value-item { display: flex; gap: 16px; align-items: flex-start; }
+  .value-item svg { margin-bottom: 0; flex-shrink: 0; }
+}
+</style>
 </head>
 <body>
 
@@ -16,16 +204,16 @@
 <header class="site-header" id="top">
   <div class="container header-inner">
     <a href="index.html" class="brand">
-      <img src="assets/logo.png" alt="Distribuciones Santana" class="brand-logo">
+      <img src="assets/logo.png" alt="Distribuciones Santa Ana" class="brand-logo">
     </a>
     <nav class="main-nav" id="main-nav">
       <a href="index.html">Inicio</a>
       <a href="nosotros.html">Nosotros</a>
       <a href="productos.html">Productos</a>
-      <a href="especializadas.html">Especializadas</a>
+      <a href="especializadas.html" class="is-active">Alianzas</a>
       <a href="contacto.html">Contacto</a>
     </nav>
-    <a href="https://wa.me/593987980003?text=Hola%2C%20deseo%20solicitar%20información%20sobre%20línea%20especializada" class="btn btn-primary nav-cta" target="_blank" rel="noopener">
+    <a href="https://wa.me/593987980003?text=Hola%2C%20deseo%20información%20sobre%20los%20productos%20RIVECA" class="btn btn-primary nav-cta" target="_blank" rel="noopener">
       Escríbenos por WhatsApp
     </a>
     <button class="nav-toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="main-nav">
@@ -36,157 +224,204 @@
 
 <main>
 
-  <!-- ============ HERO ESPECIALIZADO ============ -->
-  <section class="spec-hero">
+  <!-- ============ HERO ============ -->
+  <section class="alianzas-hero">
     <div class="container">
-      <p class="eyebrow">Alianzas estratégicas</p>
-      <h1>Línea Especializada y Distribuciones</h1>
+      <p class="eyebrow">Importación directa · India</p>
+      <h1>Alianzas Estratégicas</h1>
       <p>
-        Dos líneas de alto valor diferenciado: distribución certificada de productos ginecológicos
-        DECATE e importación directa de principios activos esenciales desde laboratorios RIVECA en India.
+        Importamos directamente desde laboratorios RIVECA en India, eliminando intermediarios.
+        Precios de origen real, trazabilidad completa y documentación regulatoria en orden.
       </p>
     </div>
   </section>
 
-  <!-- ============ LAS DOS LÍNEAS ============ -->
-  <section class="section" id="ginecologia">
+  <!-- RIVECA brand bar -->
+  <div class="riveca-brand-bar">
     <div class="container">
-      <div class="spec-grid">
+      <span class="rib-badge">RIVECA · India</span>
+      <p>Importadores directos — documentación ARCSA, registros sanitarios y certificados de importación en regla.</p>
+    </div>
+  </div>
 
-        <!-- CARD 1: DECATE -->
-        <div class="spec-card">
-          <div class="spec-card-head">
-            <span class="spec-card-badge">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l9 4.5v6c0 5-3.8 9-9 10.5-5.2-1.5-9-5.5-9-10.5v-6z"/><path d="M9 12l2 2 4-4"/></svg>
-              Distribuidores Certificados
-            </span>
-            <h2>Línea Ginecológica DECATE</h2>
-            <p>
-              Somos distribuidores certificados de DECATE, marca de referencia en salud femenina
-              para clínicas y hospitales. Nuestra alianza nos permite ofrecer stock garantizado,
-              precios de distribuidor y soporte técnico directo.
-            </p>
-          </div>
-          <div class="spec-products">
-            <h3>Productos disponibles</h3>
-            <ul class="spec-product-list">
-              <li>
-                <div>
-                  <strong>Espéculos ginecológicos</strong>
-                  <span>Tallas S, M, L — descartables y reutilizables</span>
-                </div>
-              </li>
-              <li>
-                <div>
-                  <strong>Geles lubricantes</strong>
-                  <span>Para examinación y procedimientos</span>
-                </div>
-              </li>
-              <li>
-                <div>
-                  <strong>Anticonceptivos</strong>
-                  <span>Línea hormonal y de barrera</span>
-                </div>
-              </li>
-              <li>
-                <div>
-                  <strong>Insumos de salud femenina</strong>
-                  <span>Otros productos de la línea disponibles bajo pedido</span>
-                </div>
-              </li>
-            </ul>
-          </div>
-          <div class="spec-card-footer">
-            <a href="https://wa.me/593987980003?text=Hola%2C%20deseo%20información%20sobre%20la%20línea%20DECATE" class="btn btn-primary" target="_blank" rel="noopener" style="width: 100%; justify-content: center;">
-              Consultar disponibilidad DECATE
-            </a>
+  <!-- ============ PRODUCTO 1: PROPOFOL ============ -->
+  <section class="product-row" id="propofol">
+    <div class="container">
+      <div class="product-row-inner">
+
+        <!-- Foto -->
+        <div class="product-photo-wrap">
+          <!-- INSERTAR: assets/alianzas/propofol.jpg -->
+          <img src="assets/alianzas/propofol.jpg" alt="Propofol 10mg/ml — RIVECA"
+               onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+          <div class="product-photo-placeholder" style="display:none;">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+            <span>Foto del producto<br>(assets/alianzas/propofol.jpg)</span>
           </div>
         </div>
 
-        <!-- CARD 2: RIVECA / PRODUCTOS INSIGNIA -->
-        <div class="spec-card" id="insignia">
-          <div class="spec-card-head">
-            <span class="spec-card-badge" style="background: rgba(42,140,130,0.1); border-color: rgba(42,140,130,0.4); color: var(--c-teal);">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-              Importación Directa · India
-            </span>
-            <h2>Productos Insignia — RIVECA</h2>
-            <p>
-              Importamos directamente desde los laboratorios RIVECA en India, eliminando
-              intermediarios. Esto nos permite ofrecer precios significativamente más competitivos
-              en productos de alta rotación hospitalaria, con trazabilidad completa y
-              documentación de importación.
-            </p>
+        <!-- Info -->
+        <div class="product-info">
+          <p class="product-number">Producto 01 · Anestesia</p>
+          <h2>Propofol</h2>
+          <p class="product-spec-line">10 mg/ml · Líquido parenteral · Frasco x 20 ml</p>
+          <p>
+            Agente anestésico intravenoso de corta duración de acción. Utilizado en la inducción
+            y mantenimiento de anestesia general, así como en sedación para procedimientos
+            diagnósticos y terapéuticos en unidades de cuidados intensivos.
+          </p>
+          <div class="product-tags">
+            <span class="product-tag">Uso hospitalario</span>
+            <span class="product-tag">UCI / Quirófano</span>
+            <span class="product-tag">Vía intravenosa</span>
+            <span class="product-tag">Registro ARCSA</span>
           </div>
-          <div class="spec-products">
-            <h3>Productos insignia</h3>
-            <ul class="spec-product-list">
-              <li>
-                <div>
-                  <strong>Propofol</strong>
-                  <span>Agente anestésico intravenoso de corta duración. Uso en inducción y mantenimiento de anestesia general.</span>
-                </div>
-              </li>
-              <li>
-                <div>
-                  <strong>Ketorolaco</strong>
-                  <span>Antiinflamatorio no esteroideo de alta potencia para manejo del dolor postoperatorio.</span>
-                </div>
-              </li>
-              <li>
-                <div>
-                  <strong>Paracetamol</strong>
-                  <span>Analgésico y antipirético de amplio uso. Presentaciones orales e inyectables.</span>
-                </div>
-              </li>
-            </ul>
-          </div>
-          <div class="spec-card-footer">
-            <a href="https://wa.me/593987980003?text=Hola%2C%20deseo%20información%20sobre%20productos%20RIVECA" class="btn btn-primary" target="_blank" rel="noopener" style="width: 100%; justify-content: center;">
-              Consultar productos RIVECA
-            </a>
-          </div>
+          <a href="https://wa.me/593987980003?text=Hola%2C%20deseo%20cotizar%20Propofol%2010mg%2Fml%20RIVECA"
+             class="btn btn-primary" target="_blank" rel="noopener">
+            Cotizar Propofol
+          </a>
         </div>
 
       </div>
     </div>
   </section>
 
-  <!-- ============ BANNER DIFERENCIACIÓN ============ -->
-  <section class="section section-alt">
+  <!-- ============ PRODUCTO 2: KETOROLACO ============ -->
+  <section class="product-row alt" id="ketorolaco">
     <div class="container">
-      <div class="fv-banner">
-        <div class="fv-badge" aria-hidden="true">
-          <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.5">
-            <circle cx="32" cy="32" r="28"/>
-            <path d="M20 32l8 8 16-16" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
+      <div class="product-row-inner">
+
+        <!-- Foto -->
+        <div class="product-photo-wrap">
+          <!-- INSERTAR: assets/alianzas/ketorolaco.jpg -->
+          <img src="assets/alianzas/ketorolaco.jpg" alt="Ketorolaco 30mg/ml — RIVECA"
+               onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+          <div class="product-photo-placeholder" style="display:none;">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+            <span>Foto del producto<br>(assets/alianzas/ketorolaco.jpg)</span>
+          </div>
         </div>
-        <div class="fv-copy">
-          <p class="eyebrow">¿Por qué elegir nuestra línea especializada?</p>
-          <h2>Precio de origen, calidad certificada</h2>
+
+        <!-- Info -->
+        <div class="product-info">
+          <p class="product-number">Producto 02 · Analgesia</p>
+          <h2>Ketorolaco</h2>
+          <p class="product-spec-line">30 mg/ml · Líquido parenteral · Ampolla x 1 ml</p>
           <p>
-            Al importar directamente desde RIVECA y ser distribuidores certificados de DECATE,
-            eliminamos eslabones de la cadena de suministro. Tus instituciones acceden a
-            precios de mayorista real, con toda la documentación regulatoria en orden
-            (ARCSA, registros sanitarios, certificados de importación) y el respaldo de
-            nuestra certificación BPADT.
+            Antiinflamatorio no esteroideo (AINE) de alta potencia indicado para el manejo
+            del dolor agudo moderado a severo, especialmente en el período postoperatorio.
+            Ofrece eficacia analgésica comparable a opioides en dosis terapéuticas estándar.
           </p>
+          <div class="product-tags">
+            <span class="product-tag">Postoperatorio</span>
+            <span class="product-tag">AINE potente</span>
+            <span class="product-tag">Vía parenteral</span>
+            <span class="product-tag">Registro ARCSA</span>
+          </div>
+          <a href="https://wa.me/593987980003?text=Hola%2C%20deseo%20cotizar%20Ketorolaco%2030mg%2Fml%20RIVECA"
+             class="btn btn-primary" target="_blank" rel="noopener">
+            Cotizar Ketorolaco
+          </a>
         </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PRODUCTO 3: PARACETAMOL ============ -->
+  <section class="product-row" id="paracetamol">
+    <div class="container">
+      <div class="product-row-inner">
+
+        <!-- Foto -->
+        <div class="product-photo-wrap">
+          <!-- INSERTAR: assets/alianzas/paracetamol.jpg -->
+          <img src="assets/alianzas/paracetamol.jpg" alt="Paracetamol 10mg/ml — RIVECA"
+               onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+          <div class="product-photo-placeholder" style="display:none;">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+            <span>Foto del producto<br>(assets/alianzas/paracetamol.jpg)</span>
+          </div>
+        </div>
+
+        <!-- Info -->
+        <div class="product-info">
+          <p class="product-number">Producto 03 · Analgesia · Antipirésis</p>
+          <h2>Paracetamol</h2>
+          <p class="product-spec-line">10 mg/ml · Líquido parenteral · Frasco x 100 ml</p>
+          <p>
+            Analgésico y antipirético de amplio uso hospitalario. La presentación intravenosa
+            permite su uso en pacientes que no pueden recibir medicación oral. Indicado en el
+            tratamiento del dolor leve a moderado y para reducción de fiebre en adultos y niños.
+          </p>
+          <div class="product-tags">
+            <span class="product-tag">Analgésico</span>
+            <span class="product-tag">Antipirético</span>
+            <span class="product-tag">IV · 100 ml</span>
+            <span class="product-tag">Registro ARCSA</span>
+          </div>
+          <a href="https://wa.me/593987980003?text=Hola%2C%20deseo%20cotizar%20Paracetamol%2010mg%2Fml%20RIVECA"
+             class="btn btn-primary" target="_blank" rel="noopener">
+            Cotizar Paracetamol
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ VALUE PROPS ============ -->
+  <section class="value-strip">
+    <div class="container">
+      <div class="value-strip-inner">
+
+        <div class="value-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/>
+            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+          </svg>
+          <div>
+            <h4>Importación directa</h4>
+            <p>Sin intermediarios. Compramos directo a laboratorios RIVECA en India y trasladamos el ahorro a tu institución.</p>
+          </div>
+        </div>
+
+        <div class="value-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M12 2l9 4.5v6c0 5-3.8 9-9 10.5-5.2-1.5-9-5.5-9-10.5v-6z"/>
+            <path d="M9 12l2 2 4-4"/>
+          </svg>
+          <div>
+            <h4>Documentación completa</h4>
+            <p>Registros ARCSA, certificados de importación y trazabilidad completa de cada lote.</p>
+          </div>
+        </div>
+
+        <div class="value-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+          </svg>
+          <div>
+            <h4>Alta rotación hospitalaria</h4>
+            <p>Tres principios activos esenciales en quirófano y UCI. Stock permanente y despacho ágil a nivel nacional.</p>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
 
   <!-- ============ CTA FINAL ============ -->
-  <section class="section">
-    <div class="container" style="text-align: center;">
-      <h2 style="margin-bottom: 18px; font-size: clamp(1.4rem, 2vw, 1.8rem);">¿Interesado en nuestra línea especializada?</h2>
-      <p style="color: var(--c-ink-soft); margin-bottom: 32px; max-width: 500px; margin-left: auto; margin-right: auto;">
-        Atendemos pedidos institucionales, licitaciones y contratos de suministro continuos.
+  <section class="alianzas-cta">
+    <div class="container">
+      <h2>¿Necesitas cotizar volumen institucional?</h2>
+      <p>
+        Atendemos pedidos de hospitales, clínicas, licitaciones y contratos de suministro continuo.
         Solicita tu proforma personalizada.
       </p>
-      <a href="https://wa.me/593987980003?text=Hola%2C%20deseo%20información%20sobre%20la%20línea%20especializada" class="btn btn-primary" target="_blank" rel="noopener">
-        Solicitar información por WhatsApp
+      <a href="https://wa.me/593987980003?text=Hola%2C%20deseo%20cotizar%20productos%20RIVECA%20para%20mi%20institución"
+         class="btn btn-primary" target="_blank" rel="noopener">
+        Solicitar cotización por WhatsApp
       </a>
     </div>
   </section>
@@ -197,10 +432,10 @@
 <footer class="site-footer">
   <div class="container footer-inner">
     <div class="brand brand--footer">
-      <img src="assets/logo.png" alt="Distribuciones Santana" class="brand-logo" style="filter: brightness(0) invert(1); opacity: 0.92;">
+      <img src="assets/logo.png" alt="Distribuciones Santa Ana" class="brand-logo" style="filter: brightness(0) invert(1); opacity: 0.92;">
     </div>
     <p class="footer-note">Distribución al por mayor de medicamentos e insumos médicos — Manta, Ecuador.</p>
-    <p class="footer-copy">© 2026 Distribuciones Santana. Todos los derechos reservados. Manta, Ecuador.</p>
+    <p class="footer-copy">© 2026 Distribuciones Santa Ana. Todos los derechos reservados. Manta, Ecuador.</p>
   </div>
 </footer>
 
