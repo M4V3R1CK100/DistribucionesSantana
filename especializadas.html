@@ -94,6 +94,11 @@
 .product-row.alt .product-row-inner { direction: rtl; }
 .product-row.alt .product-row-inner > * { direction: ltr; }
 
+/* Modificadores independientes: fondo gris y lado de la foto */
+.product-row.panel { background: var(--c-panel); }
+.product-row.flip .product-row-inner { direction: rtl; }
+.product-row.flip .product-row-inner > * { direction: ltr; }
+
 /* Photo side */
 .product-photo-wrap {
   border-radius: 12px;
@@ -547,7 +552,8 @@
 /* Responsive */
 @media (max-width: 860px) {
   .product-row-inner { grid-template-columns: 1fr; gap: 32px; }
-  .product-row.alt .product-row-inner { direction: ltr; }
+  .product-row.alt .product-row-inner,
+  .product-row.flip .product-row-inner { direction: ltr; }
   .product-photo-wrap { aspect-ratio: 16/9; }
   .alliance-divider .container { flex-direction: column; align-items: flex-start; gap: 14px; }
   .andalan-layout { grid-template-columns: 1fr; gap: 32px; }
@@ -607,7 +613,9 @@
         <!-- Foto -->
         <div class="product-photo-wrap">
           <div class="product-accent-bar"></div>
-          <img src="assets/alianzas/propofol.jpg" alt="Propofol 10mg/ml — RIVECA">
+          <img src="assets/alianzas/propofol.jpg" alt="Propofol 10mg/ml — RIVECA"
+               onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+          <div class="product-icon-placeholder" style="display:none;" aria-hidden="true"></div>
         </div>
 
         <!-- Info -->
@@ -644,7 +652,9 @@
         <!-- Foto -->
         <div class="product-photo-wrap">
           <div class="product-accent-bar"></div>
-          <img src="assets/alianzas/ketorolaco.jpg" alt="Ketorolaco 30mg/ml — RIVECA">
+          <img src="assets/alianzas/ketorolaco.jpg" alt="Ketorolaco 30mg/ml — RIVECA"
+               onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+          <div class="product-icon-placeholder" style="display:none;" aria-hidden="true"></div>
         </div>
 
         <!-- Info -->
@@ -681,12 +691,14 @@
         <!-- Foto -->
         <div class="product-photo-wrap">
           <div class="product-accent-bar"></div>
-          <img src="assets/alianzas/paracetamol.jpg" alt="Paracetamol 10mg/ml — RIVECA">
+          <img src="assets/alianzas/paracetamol.jpg" alt="Paracetamol 10mg/ml — RIVECA"
+               onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+          <div class="product-icon-placeholder" style="display:none;" aria-hidden="true"></div>
         </div>
 
         <!-- Info -->
         <div class="product-info">
-          <p class="product-number">Producto 03 · Analgesia · Antipirésis</p>
+          <p class="product-number">Producto 03 · Analgesia · Antipirético</p>
           <h2>Paracetamol</h2>
           <p class="product-spec-line">10 mg/ml · Líquido parenteral · Frasco x 100 ml</p>
           <p>
@@ -769,46 +781,7 @@
   </section>
 
 
-  <!-- ============ DKT 03: LYNDAVEL ============ -->
-  <section class="product-row alt" id="lyndavel" data-color="plum">
-    <div class="container">
-      <div class="product-row-inner">
-
-        <div class="product-photo-wrap">
-          <div class="product-accent-bar"></div>
-          <img src="assets/alianzas/lyndavel.jpg" alt="Lyndavel® — DKT"
-               onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
-          <div class="product-icon-placeholder" style="display:none;" aria-hidden="true"></div>
-        </div>
-
-        <div class="product-info">
-          <p class="product-number">DKT 03 · Anticonceptivo Inyectable</p>
-          <h2>Lyndavel®</h2>
-          <p class="product-spec-line">Acetato de Medroxiprogesterona 150 mg/mL · Inyectable trimestral · 1 vial de 1 mL</p>
-          <p>
-            Anticonceptivo inyectable de acción prolongada a base de acetato de medroxiprogesterona.
-            Una sola aplicación intramuscular cada 3 meses (13 semanas) proporciona protección
-            anticonceptiva continua. Ideal para pacientes que prefieren evitar el uso de estrógenos.
-            Presentación individual y en caja x 20 viales para instituciones.
-          </p>
-          <div class="product-tags">
-            <span class="product-tag">Inyectable trimestral</span>
-            <span class="product-tag">Sin estrógeno</span>
-            <span class="product-tag">Cada 3 meses</span>
-            <span class="product-tag">Uso institucional</span>
-          </div>
-          <a href="https://wa.me/593987980003?text=Hola%2C%20deseo%20cotizar%20Lyndavel%20DKT"
-             class="btn btn-primary" target="_blank" rel="noopener">
-            Cotizar Lyndavel
-          </a>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  
-  <!-- ============ DKT 02: ANDALAN — 5 versiones ============ -->
+  <!-- ============ DKT 02: ANDALAN — 8 versiones ============ -->
   <section class="andalan-section" id="andalan">
     <div class="container">
       <div class="andalan-layout">
@@ -941,8 +914,47 @@
     </div>
   </section>
 
+  <!-- ============ DKT 03: LYNDAVEL ============ -->
+  <section class="product-row flip" id="lyndavel" data-color="plum">
+    <div class="container">
+      <div class="product-row-inner">
+
+        <div class="product-photo-wrap">
+          <div class="product-accent-bar"></div>
+          <img src="assets/alianzas/lyndavel.jpg" alt="Lyndavel® — DKT"
+               onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+          <div class="product-icon-placeholder" style="display:none;" aria-hidden="true"></div>
+        </div>
+
+        <div class="product-info">
+          <p class="product-number">DKT 03 · Anticonceptivo Inyectable</p>
+          <h2>Lyndavel®</h2>
+          <p class="product-spec-line">Acetato de Medroxiprogesterona 150 mg/mL · Inyectable trimestral · 1 vial de 1 mL</p>
+          <p>
+            Anticonceptivo inyectable de acción prolongada a base de acetato de medroxiprogesterona.
+            Una sola aplicación intramuscular cada 3 meses (13 semanas) proporciona protección
+            anticonceptiva continua. Ideal para pacientes que prefieren evitar el uso de estrógenos.
+            Presentación individual y en caja x 20 viales para instituciones.
+          </p>
+          <div class="product-tags">
+            <span class="product-tag">Inyectable trimestral</span>
+            <span class="product-tag">Sin estrógeno</span>
+            <span class="product-tag">Cada 3 meses</span>
+            <span class="product-tag">Uso institucional</span>
+          </div>
+          <a href="https://wa.me/593987980003?text=Hola%2C%20deseo%20cotizar%20Lyndavel%20DKT"
+             class="btn btn-primary" target="_blank" rel="noopener">
+            Cotizar Lyndavel
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  
   <!-- ============ DKT 04: LEVOPLANT ============ -->
-  <section class="product-row" id="levoplant" data-color="coral">
+  <section class="product-row panel" id="levoplant" data-color="coral">
     <div class="container">
       <div class="product-row-inner">
 
@@ -981,7 +993,7 @@
   </section>
 
   <!-- ============ DKT 05: MISO-FEM ============ -->
-  <section class="product-row alt" id="misofem" data-color="plum">
+  <section class="product-row flip" id="misofem" data-color="plum">
     <div class="container">
       <div class="product-row-inner">
 
@@ -1042,6 +1054,11 @@
       <img src="assets/logo.png" alt="Distribuciones Santa Ana" class="brand-logo" style="filter: brightness(0) invert(1); opacity: 0.92;">
     </div>
     <p class="footer-note">Distribución al por mayor de medicamentos e insumos médicos — Manta, Ecuador.</p>
+    <p class="footer-note" style="margin-top:6px;">
+      <a href="mailto:info@distribucionessantaana.com" style="color:inherit;text-decoration:none;border-bottom:1px solid rgba(255,255,255,0.3);">info@distribucionessantaana.com</a>
+      &nbsp;·&nbsp;
+      <a href="https://wa.me/593987980003" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;border-bottom:1px solid rgba(255,255,255,0.3);">0987 980 003</a>
+    </p>
     <p class="footer-copy">© 2026 Distribuciones Santa Ana. Todos los derechos reservados. Manta, Ecuador.</p>
   </div>
 </footer>
