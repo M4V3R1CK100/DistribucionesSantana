@@ -433,7 +433,7 @@
 /* Photo strip */
 .andalan-photos {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   gap: 12px;
 }
 .andalan-photo-panel {
@@ -545,7 +545,7 @@
   .product-photo-wrap { aspect-ratio: 16/9; }
   .alliance-divider .container { flex-direction: column; align-items: flex-start; gap: 14px; }
   .andalan-layout { grid-template-columns: 1fr; gap: 32px; }
-  .andalan-photos { grid-template-columns: 1fr 1fr 1fr; }
+  .andalan-photos { grid-template-columns: 1fr 1fr; }
 }
 </style>
 </head>
@@ -771,12 +771,12 @@
         <div class="andalan-info-col">
           <p class="product-number">DKT 02 · DIU de Cobre</p>
           <h2>Línea DIU Andalan</h2>
-          <p>DIU de cobre libre de hormonas. Eficacia &gt;99%, inserción rápida y reversible. Sin impacto en lactancia. 5 versiones para cada necesidad clínica.</p>
+          <p>DIU de cobre libre de hormonas. Eficacia &gt;99%, inserción rápida y reversible. Sin impacto en lactancia. 8 versiones — incluyendo modelos mini y con núcleo de plata — para cada necesidad clínica.</p>
           <div class="product-tags">
             <span class="product-tag" style="background:rgba(180,50,100,0.07);border-color:rgba(180,50,100,0.25);color:#B43264;">Sin hormonas</span>
             <span class="product-tag" style="background:rgba(180,50,100,0.07);border-color:rgba(180,50,100,0.25);color:#B43264;">+99% eficacia</span>
             <span class="product-tag" style="background:rgba(180,50,100,0.07);border-color:rgba(180,50,100,0.25);color:#B43264;">Reversible</span>
-            <span class="product-tag" style="background:rgba(180,50,100,0.07);border-color:rgba(180,50,100,0.25);color:#B43264;">5 versiones</span>
+            <span class="product-tag" style="background:rgba(180,50,100,0.07);border-color:rgba(180,50,100,0.25);color:#B43264;">8 versiones</span>
           </div>
           <div class="andalan-cta-wrap">
             <a href="https://wa.me/593987980003?text=Hola%2C%20deseo%20cotizar%20DIU%20Andalan%20DKT"
@@ -788,7 +788,7 @@
 
         <!-- Columna derecha: lista de versiones -->
         <div class="andalan-versions-col">
-          <p class="andalan-versions-label">5 versiones disponibles</p>
+          <p class="andalan-versions-label">8 versiones disponibles</p>
 
           <div class="andalan-version-row">
             <span class="andalan-version-cu">Cu 380</span>
@@ -818,6 +818,24 @@
             <span class="andalan-version-cu">Cu 380 Ag</span>
             <span class="andalan-version-name">Andalan Silverflex</span>
             <span class="andalan-version-years">Hasta 5 años</span>
+          </div>
+
+          <div class="andalan-version-row">
+            <span class="andalan-version-cu">Cu 380 Ag</span>
+            <span class="andalan-version-name">Andalan Silverflex Mini</span>
+            <span class="andalan-version-years">Hasta 5 años · talla mini</span>
+          </div>
+
+          <div class="andalan-version-row">
+            <span class="andalan-version-cu">Cu 380</span>
+            <span class="andalan-version-name">Andalan Copperflex</span>
+            <span class="andalan-version-years">Hasta 5 años</span>
+          </div>
+
+          <div class="andalan-version-row">
+            <span class="andalan-version-cu">Cu 380</span>
+            <span class="andalan-version-name">Andalan Copperflex Mini</span>
+            <span class="andalan-version-years">Hasta 5 años · talla mini</span>
           </div>
         </div>
 
@@ -857,6 +875,17 @@
             Silverflex
           </div>
           <div class="andalan-photo-label">Silverflex</div>
+        </div>
+
+        <!-- Panel 4: Silverflex Mini + Copperflex + Copperflex Mini -->
+        <div class="andalan-photo-panel">
+          <img src="assets/alianzas/andalan-group4.jpg" alt="Andalan Silverflex Mini y Copperflex"
+               onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="andalan-photo-placeholder" style="display:none">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+            Silverflex Mini · Copperflex · Copperflex Mini
+          </div>
+          <div class="andalan-photo-label">Silverflex Mini · Copperflex</div>
         </div>
 
       </div>
