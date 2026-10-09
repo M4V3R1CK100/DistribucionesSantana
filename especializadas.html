@@ -127,38 +127,50 @@
   opacity: 0.35;
 }
 
-/* Color accent per product — RIVECA */
-.product-row[data-color="propofol"] .product-accent-bar { background: #1B4F9A; }
-.product-row[data-color="propofol"] .product-number { color: #1B4F9A; }
-.product-row[data-color="propofol"] .product-tag { background: rgba(27,79,154,0.07); border-color: rgba(27,79,154,0.25); color: #1B4F9A; }
+/* ── Color accent per product — RIVECA ── */
+.product-row[data-color="propofol"] { --col: #1B4F9A; --col-light: rgba(27,79,154,0.07); --col-mid: rgba(27,79,154,0.25); }
+.product-row[data-color="ketorolaco"] { --col: #B8922A; --col-light: rgba(184,146,42,0.08); --col-mid: rgba(184,146,42,0.3); }
+.product-row[data-color="paracetamol"] { --col: #8B1A2F; --col-light: rgba(139,26,47,0.07); --col-mid: rgba(139,26,47,0.25); }
 
-.product-row[data-color="ketorolaco"] .product-accent-bar { background: #B8922A; }
-.product-row[data-color="ketorolaco"] .product-number { color: #B8922A; }
-.product-row[data-color="ketorolaco"] .product-tag { background: rgba(184,146,42,0.08); border-color: rgba(184,146,42,0.3); color: #9A7520; }
+/* ── Color accent per product — DKT ── */
+.product-row[data-color="rose"] { --col: #B43264; --col-light: rgba(180,50,100,0.07); --col-mid: rgba(180,50,100,0.25); }
+.product-row[data-color="plum"] { --col: #7B2D6E; --col-light: rgba(123,45,110,0.07); --col-mid: rgba(123,45,110,0.25); }
+.product-row[data-color="coral"] { --col: #C44A6A; --col-light: rgba(196,74,106,0.07); --col-mid: rgba(196,74,106,0.25); }
 
-.product-row[data-color="paracetamol"] .product-accent-bar { background: #8B1A2F; }
-.product-row[data-color="paracetamol"] .product-number { color: #8B1A2F; }
-.product-row[data-color="paracetamol"] .product-tag { background: rgba(139,26,47,0.07); border-color: rgba(139,26,47,0.25); color: #8B1A2F; }
+/* Apply color tokens to elements */
+.product-row .product-accent-bar { background: var(--col); }
+.product-row .product-number { color: var(--col); }
+.product-row .product-tag { background: var(--col-light); border-color: var(--col-mid); color: var(--col); }
+.product-row .product-info { border-left: 3px solid var(--col); padding-left: 22px; }
+.product-row .product-info h2 { position: relative; padding-bottom: 14px; }
+.product-row .product-info h2::after {
+  content: '';
+  position: absolute;
+  left: 0; bottom: 0;
+  width: 40px; height: 2px;
+  background: var(--col);
+  border-radius: 2px;
+}
+.product-row .product-photo-wrap {
+  box-shadow: 0 8px 32px rgba(0,0,0,0.10);
+}
+/* Colored glow ring on photo wrap */
+.product-row .product-photo-wrap::after {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: 12px;
+  border: 2px solid var(--col-mid);
+  pointer-events: none;
+}
 
-/* Color accent per product — DKT gynecological */
-.product-row[data-color="rose"] .product-accent-bar { background: #B43264; }
-.product-row[data-color="rose"] .product-number { color: #B43264; }
-.product-row[data-color="rose"] .product-tag { background: rgba(180,50,100,0.07); border-color: rgba(180,50,100,0.25); color: #B43264; }
-
-.product-row[data-color="plum"] .product-accent-bar { background: #7B2D6E; }
-.product-row[data-color="plum"] .product-number { color: #7B2D6E; }
-.product-row[data-color="plum"] .product-tag { background: rgba(123,45,110,0.07); border-color: rgba(123,45,110,0.25); color: #7B2D6E; }
-
-.product-row[data-color="coral"] .product-accent-bar { background: #C44A6A; }
-.product-row[data-color="coral"] .product-number { color: #C44A6A; }
-.product-row[data-color="coral"] .product-tag { background: rgba(196,74,106,0.07); border-color: rgba(196,74,106,0.25); color: #C44A6A; }
-
-/* Accent bar on photo */
+/* Accent bar on photo top */
 .product-accent-bar {
   position: absolute;
   top: 0; left: 0; right: 0;
-  height: 4px;
+  height: 5px;
   border-radius: 0;
+  z-index: 2;
 }
 
 /* Photo placeholder icon */
@@ -168,24 +180,41 @@
   justify-content: center;
   width: 100%;
   height: 100%;
-  background: linear-gradient(135deg, #f8f0f4 0%, #ede1e8 100%);
   font-size: 4rem;
 }
+/* Tinted placeholder per color family */
+.product-row[data-color="propofol"] .product-icon-placeholder { background: linear-gradient(135deg,#e8eef8 0%,#d0dcf0 100%); }
+.product-row[data-color="ketorolaco"] .product-icon-placeholder { background: linear-gradient(135deg,#f5eddb 0%,#ecdcc0 100%); }
+.product-row[data-color="paracetamol"] .product-icon-placeholder { background: linear-gradient(135deg,#f5e8eb 0%,#e8d0d5 100%); }
+.product-row[data-color="rose"] .product-icon-placeholder { background: linear-gradient(135deg,#f8edf2 0%,#f0d5e3 100%); }
+.product-row[data-color="plum"] .product-icon-placeholder { background: linear-gradient(135deg,#f2e8f5 0%,#e4d0ef 100%); }
+.product-row[data-color="coral"] .product-icon-placeholder { background: linear-gradient(135deg,#f7e8ed 0%,#f0d0da 100%); }
 
 /* Info side */
-.product-info {}
+.product-info { }
 .product-number {
   font-family: var(--font-display);
-  font-size: 0.78rem;
+  font-size: 0.75rem;
   font-weight: 700;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--c-teal);
-  margin-bottom: 8px;
+  margin-bottom: 6px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.product-number::before {
+  content: '';
+  display: inline-block;
+  width: 18px; height: 2px;
+  background: var(--col);
+  border-radius: 2px;
+  flex-shrink: 0;
 }
 .product-info h2 {
   font-size: clamp(1.5rem, 2.5vw, 2rem);
   margin-bottom: 8px;
+  margin-top: 4px;
 }
 .product-spec-line {
   font-size: 0.88rem;
@@ -208,9 +237,7 @@
   margin-bottom: 32px;
 }
 .product-tag {
-  background: rgba(42,140,130,0.08);
-  border: 1px solid rgba(42,140,130,0.25);
-  color: var(--c-teal);
+  border: 1px solid;
   border-radius: 4px;
   padding: 4px 12px;
   font-size: 0.8rem;
@@ -238,12 +265,6 @@
 .dkt-hero .container { position: relative; z-index: 1; padding-top: 48px; padding-bottom: 48px; }
 .dkt-hero .eyebrow {
   color: #F4A7BF;
-  font-family: var(--font-display);
-  font-size: 0.78rem;
-  font-weight: 700;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  display: block;
   margin-bottom: 10px;
 }
 .dkt-hero h2 {
@@ -269,12 +290,128 @@
 .alianzas-cta h2 { margin-bottom: 14px; font-size: clamp(1.4rem, 2.5vw, 1.9rem); }
 .alianzas-cta p { color: var(--c-ink-soft); margin-bottom: 32px; max-width: 480px; margin-left: auto; margin-right: auto; }
 
+/* OMS badge */
+.product-oms-badge {
+  display: inline-block;
+  background: rgba(232,175,79,0.12);
+  border: 1px solid rgba(232,175,79,0.4);
+  color: #C98F2E;
+  border-radius: 4px;
+  padding: 3px 10px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  margin-bottom: 20px;
+}
+
+/* ANDALAN section */
+.andalan-section {
+  padding: 72px 0;
+  background: var(--c-panel);
+  border-bottom: 1px solid var(--c-line);
+}
+.andalan-intro {
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto 48px;
+}
+.andalan-intro .product-number {
+  justify-content: center;
+  margin-bottom: 10px;
+}
+.andalan-intro h2 {
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  margin-bottom: 14px;
+}
+.andalan-intro p {
+  color: var(--c-ink-soft);
+  line-height: 1.7;
+}
+.andalan-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-bottom: 48px;
+}
+.andalan-card {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 18px rgba(0,0,0,0.08);
+  border-top: 4px solid #B43264;
+  padding: 24px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.andalan-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 28px rgba(180,50,100,0.14);
+}
+.andalan-card h3 {
+  font-size: 1.05rem;
+  margin-bottom: 12px;
+  color: var(--c-ink);
+  font-family: var(--font-display);
+}
+.andalan-badges {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 14px;
+}
+.andalan-card-badge {
+  background: rgba(180,50,100,0.08);
+  border: 1px solid rgba(180,50,100,0.25);
+  color: #B43264;
+  border-radius: 4px;
+  padding: 3px 10px;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+.andalan-card-duration {
+  background: rgba(27,58,92,0.06);
+  border: 1px solid rgba(27,58,92,0.15);
+  color: var(--c-navy);
+  border-radius: 4px;
+  padding: 3px 10px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+.andalan-card-bullets {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.andalan-card-bullets li {
+  font-size: 0.85rem;
+  color: var(--c-ink-soft);
+  padding: 5px 0;
+  border-bottom: 1px solid var(--c-line);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  line-height: 1.4;
+}
+.andalan-card-bullets li:last-child { border-bottom: none; }
+.andalan-card-bullets li::before {
+  content: '';
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: #B43264;
+  flex-shrink: 0;
+}
+.andalan-cta-wrap {
+  text-align: center;
+}
+
 /* Responsive */
 @media (max-width: 860px) {
   .product-row-inner { grid-template-columns: 1fr; gap: 32px; }
   .product-row.alt .product-row-inner { direction: ltr; }
   .product-photo-wrap { aspect-ratio: 16/9; }
   .alliance-divider .container { flex-direction: column; align-items: flex-start; gap: 14px; }
+  .andalan-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 560px) {
+  .andalan-grid { grid-template-columns: 1fr; }
 }
 </style>
 </head>
@@ -309,15 +446,15 @@
     <img src="assets/alianzas/hero-lab.webp" alt="" class="alianzas-hero-bg" aria-hidden="true">
     <div class="container">
       <p class="eyebrow">Alianzas Estratégicas</p>
-      <h1>Productos de Importación Directa</h1>
+      <h1>Anestésicos y Analgésicos Parenterales — RIVECA</h1>
       <p>
-        Trabajamos directamente con laboratorios fabricantes, eliminando intermediarios.
-        Precios competitivos de origen, trazabilidad completa y abastecimiento continuo
-        para instituciones de salud a nivel nacional.
+        Importamos directamente desde laboratorios fabricantes: Propofol, Ketorolaco y Paracetamol
+        IV. Precios competitivos de origen, trazabilidad completa y stock permanente para
+        quirófano, UCI e instituciones de salud a nivel nacional.
       </p>
       <div class="hero-brand-sub">
         <span class="hero-brand-badge riveca">RIVECA Pharma</span>
-        <p>Anestesia y Analgesia Hospitalaria — alta rotación en quirófano y UCI. Stock permanente y despacho ágil a nivel nacional.</p>
+        <p>Anestesia y Analgesia Hospitalaria — alta rotación en quirófano y UCI. Despacho ágil y abastecimiento continuo a nivel nacional.</p>
       </div>
     </div>
   </section>
@@ -438,12 +575,12 @@
     <img src="assets/alianzas/hero-dkt.jpg" alt="" class="dkt-hero-bg" aria-hidden="true"
          onerror="this.style.display='none'">
     <div class="container">
-      <span class="eyebrow">Andalan Pharma · DKT</span>
-      <h2>Línea Ginecológica Especializada</h2>
+      <p class="eyebrow">Alianzas Estratégicas</p>
+      <h2>Productos Ginecológicos — DKT</h2>
       <p class="hero-desc">
-        Dispositivos intrauterinos, implantes anticonceptivos y medicamentos ginecológicos
-        de última generación. Soluciones de planificación familiar y salud reproductiva
-        con respaldo clínico internacional.
+        Distribuimos DIUs, implantes anticonceptivos y medicamentos ginecológicos de DKT y Andalan Pharma.
+        Soluciones de planificación familiar y salud reproductiva con respaldo clínico internacional
+        y precios competitivos para clínicas y hospitales.
       </p>
       <div class="hero-brand-sub">
         <span class="hero-brand-badge dkt">DKT · Ginecología</span>
@@ -452,35 +589,38 @@
     </div>
   </section>
 
-  <!-- ============ DKT 01: ANDALAN COPPERFLEX ============ -->
-  <section class="product-row" id="copperflex" data-color="rose">
+  <!-- ============ DKT 01: AMEU ============ -->
+  <section class="product-row" id="ameu" data-color="rose">
     <div class="container">
       <div class="product-row-inner">
 
         <div class="product-photo-wrap">
           <div class="product-accent-bar"></div>
-          <div class="product-icon-placeholder" aria-hidden="true">🔵</div>
+          <img src="assets/alianzas/ameu.jpg" alt="AMEU — DKT"
+               onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+          <div class="product-icon-placeholder" style="display:none;" aria-hidden="true"></div>
         </div>
 
         <div class="product-info">
-          <p class="product-number">DKT 01 · DIU Cobre</p>
-          <h2>Andalan CopperFlex</h2>
-          <p class="product-spec-line">DIU de cobre flexible · Eficacia hasta 10 años</p>
+          <p class="product-number">DKT 01 · Procedimiento Ginecológico</p>
+          <h2>AMEU</h2>
+          <p class="product-spec-line">Kit de Aspiración Manual Endouterina · Estándar OMS</p>
           <p>
-            Dispositivo intrauterino de cobre con diseño flexible que se adapta a la cavidad
-            uterina, minimizando molestias durante la inserción. No hormonal, de acción
-            inmediata, con eficacia anticonceptiva superior al 99%. Ideal para pacientes
-            que prefieren una opción libre de hormonas a largo plazo.
+            Kit completo para aspiración manual endouterina. Procedimiento seguro y mínimamente
+            invasivo para el manejo del aborto incompleto, biopsia endometrial y extracción de
+            restos intrauterinos. Equipo desechable de un solo uso, avalado por la OMS y utilizado
+            en instituciones de salud a nivel mundial. Inserción sencilla, sin necesidad de
+            anestesia general.
           </p>
           <div class="product-tags">
-            <span class="product-tag">No hormonal</span>
-            <span class="product-tag">Hasta 10 años</span>
-            <span class="product-tag">Inserción flexible</span>
-            <span class="product-tag">+99% eficacia</span>
+            <span class="product-tag">Kit completo</span>
+            <span class="product-tag">Estándar OMS</span>
+            <span class="product-tag">Uso hospitalario</span>
+            <span class="product-tag">Sin anestesia general</span>
           </div>
-          <a href="https://wa.me/593987980003?text=Hola%2C%20deseo%20cotizar%20Andalan%20CopperFlex%20DKT"
+          <a href="https://wa.me/593987980003?text=Hola%2C%20deseo%20cotizar%20Kit%20AMEU%20DKT"
              class="btn btn-primary" target="_blank" rel="noopener">
-            Cotizar CopperFlex
+            Cotizar Kit AMEU
           </a>
         </div>
 
@@ -488,67 +628,127 @@
     </div>
   </section>
 
-  <!-- ============ DKT 02: ANDALAN SILVER FLEX ============ -->
-  <section class="product-row alt" id="silverflex" data-color="plum">
+  <!-- ============ DKT 02: ANDALAN — 5 versiones ============ -->
+  <section class="andalan-section" id="andalan" data-color="rose">
     <div class="container">
-      <div class="product-row-inner">
 
-        <div class="product-photo-wrap">
-          <div class="product-accent-bar"></div>
-          <div class="product-icon-placeholder" aria-hidden="true" style="background: linear-gradient(135deg, #ede8f4 0%, #ddd0ec 100%);">🔮</div>
+      <div class="andalan-intro">
+        <p class="product-number" style="color:#B43264;">Línea Andalan · DKT</p>
+        <h2>DIU Andalan — 5 Versiones</h2>
+        <p>Dispositivos intrauterinos de cobre libres de hormonas. Efectividad mayor al 99%, inserción rápida y método reversible de inmediato. Disponibles en 5 versiones para adaptarse a cada paciente.</p>
+      </div>
+
+      <div class="andalan-grid">
+
+        <!-- Card 1: Classic Cu 380 -->
+        <div class="andalan-card">
+          <h3>Andalan Classic Cu 380</h3>
+          <div class="andalan-badges">
+            <span class="andalan-card-badge">Cu 380</span>
+            <span class="andalan-card-duration">Hasta 10 años</span>
+          </div>
+          <ul class="andalan-card-bullets">
+            <li>DIU en T de cobre</li>
+            <li>Brazos rígidos estándar</li>
+            <li>Radiopaco con sulfato de bario</li>
+          </ul>
         </div>
 
-        <div class="product-info">
-          <p class="product-number">DKT 02 · DIU Plata</p>
-          <h2>Andalan Silver Flex</h2>
-          <p class="product-spec-line">DIU de cobre reforzado con plata · Hasta 10 años</p>
-          <p>
-            Dispositivo intrauterino que combina cobre y plata en su estructura. La adición
-            de plata potencia el efecto anticonceptivo y proporciona propiedades antimicrobianas
-            adicionales. Diseño flexible para mayor comodidad en la inserción y menor tasa
-            de expulsión. Sin hormonas, de acción continua e inmediata.
-          </p>
-          <div class="product-tags">
-            <span class="product-tag">Cobre + plata</span>
-            <span class="product-tag">Antimicrobiano</span>
-            <span class="product-tag">Hasta 10 años</span>
-            <span class="product-tag">Baja tasa expulsión</span>
+        <!-- Card 2: Classic Posparto Cu 380 -->
+        <div class="andalan-card">
+          <h3>Andalan Classic Posparto Cu 380</h3>
+          <div class="andalan-badges">
+            <span class="andalan-card-badge">Cu 380</span>
+            <span class="andalan-card-duration">Inserción inmediata posparto</span>
           </div>
-          <a href="https://wa.me/593987980003?text=Hola%2C%20deseo%20cotizar%20Andalan%20Silver%20Flex%20DKT"
-             class="btn btn-primary" target="_blank" rel="noopener">
-            Cotizar Silver Flex
-          </a>
+          <ul class="andalan-card-bullets">
+            <li>Aplicador especial posparto</li>
+            <li>Inserción en 10 min post-expulsión</li>
+            <li>Para parto normal o cesárea</li>
+          </ul>
+        </div>
+
+        <!-- Card 3: Comfort Cu 375 -->
+        <div class="andalan-card">
+          <h3>Andalan Comfort Cu 375</h3>
+          <div class="andalan-badges">
+            <span class="andalan-card-badge">Cu 375</span>
+            <span class="andalan-card-duration">Hasta 5 años</span>
+          </div>
+          <ul class="andalan-card-bullets">
+            <li>Brazos curvos formato omega</li>
+            <li>Menor tasa de expulsión</li>
+            <li>Diseño ergonómico</li>
+          </ul>
+        </div>
+
+        <!-- Card 4: Comfort Mini Cu 375 -->
+        <div class="andalan-card">
+          <h3>Andalan Comfort Mini Cu 375</h3>
+          <div class="andalan-badges">
+            <span class="andalan-card-badge">Cu 375 Mini</span>
+            <span class="andalan-card-duration">Hasta 5 años</span>
+          </div>
+          <ul class="andalan-card-bullets">
+            <li>Para cavidad uterina pequeña</li>
+            <li>Ideal para nulíparas</li>
+            <li>Brazo vertical reducido</li>
+          </ul>
+        </div>
+
+        <!-- Card 5: Silverflex Cu 380 Ag -->
+        <div class="andalan-card">
+          <h3>Andalan Silverflex Cu 380 Ag</h3>
+          <div class="andalan-badges">
+            <span class="andalan-card-badge">Cu 380 Ag</span>
+            <span class="andalan-card-duration">Hasta 5 años</span>
+          </div>
+          <ul class="andalan-card-bullets">
+            <li>Cobre + plata antimicrobiana</li>
+            <li>Brazos más flexibles</li>
+            <li>Inserción más cómoda</li>
+          </ul>
         </div>
 
       </div>
+
+      <div class="andalan-cta-wrap">
+        <a href="https://wa.me/593987980003?text=Hola%2C%20deseo%20cotizar%20DIU%20Andalan%20DKT"
+           class="btn btn-primary" target="_blank" rel="noopener">
+          Cotizar DIU Andalan
+        </a>
+      </div>
+
     </div>
   </section>
 
   <!-- ============ DKT 03: LYNDAVEL ============ -->
-  <section class="product-row" id="lyndavel" data-color="rose">
+  <section class="product-row alt" id="lyndavel" data-color="plum">
     <div class="container">
       <div class="product-row-inner">
 
         <div class="product-photo-wrap">
           <div class="product-accent-bar"></div>
-          <div class="product-icon-placeholder" aria-hidden="true">🌸</div>
+          <img src="assets/alianzas/lyndavel.jpg" alt="Lyndavel® — DKT"
+               onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+          <div class="product-icon-placeholder" style="display:none;" aria-hidden="true"></div>
         </div>
 
         <div class="product-info">
-          <p class="product-number">DKT 03 · SIU Hormonal</p>
-          <h2>Lyndavel</h2>
-          <p class="product-spec-line">Levonorgestrel 52 mg · SIU intrauterino · Hasta 5 años</p>
+          <p class="product-number">DKT 03 · Anticonceptivo Inyectable</p>
+          <h2>Lyndavel®</h2>
+          <p class="product-spec-line">Acetato de Medroxiprogesterona 150 mg/mL · Inyectable trimestral · 1 vial de 1 mL</p>
           <p>
-            Sistema intrauterino que libera levonorgestrel de forma local y continua.
-            Proporciona anticoncepción altamente efectiva con dosis hormonal mínima sistémica.
-            Además de su efecto anticonceptivo, reduce significativamente el sangrado menstrual,
-            siendo una opción terapéutica para menorragia y endometriosis.
+            Anticonceptivo inyectable de acción prolongada a base de acetato de medroxiprogesterona.
+            Una sola aplicación intramuscular cada 3 meses (13 semanas) proporciona protección
+            anticonceptiva continua. Ideal para pacientes que prefieren evitar el uso de estrógenos.
+            Presentación individual y en caja x 20 viales para instituciones.
           </p>
           <div class="product-tags">
-            <span class="product-tag">Levonorgestrel 52 mg</span>
-            <span class="product-tag">Hasta 5 años</span>
-            <span class="product-tag">Reduce sangrado</span>
-            <span class="product-tag">+99% eficacia</span>
+            <span class="product-tag">Inyectable trimestral</span>
+            <span class="product-tag">Sin estrógeno</span>
+            <span class="product-tag">Cada 3 meses</span>
+            <span class="product-tag">Uso institucional</span>
           </div>
           <a href="https://wa.me/593987980003?text=Hola%2C%20deseo%20cotizar%20Lyndavel%20DKT"
              class="btn btn-primary" target="_blank" rel="noopener">
@@ -561,30 +761,33 @@
   </section>
 
   <!-- ============ DKT 04: LEVOPLANT ============ -->
-  <section class="product-row alt" id="levoplant" data-color="coral">
+  <section class="product-row" id="levoplant" data-color="coral">
     <div class="container">
       <div class="product-row-inner">
 
         <div class="product-photo-wrap">
           <div class="product-accent-bar"></div>
-          <div class="product-icon-placeholder" aria-hidden="true" style="background: linear-gradient(135deg, #f7e8ed 0%, #f0d0da 100%);">💊</div>
+          <img src="assets/alianzas/levoplant.jpg" alt="Levoplant® — DKT"
+               onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+          <div class="product-icon-placeholder" style="display:none;" aria-hidden="true"></div>
         </div>
 
         <div class="product-info">
-          <p class="product-number">DKT 04 · Implante subdérmico</p>
-          <h2>Levoplant</h2>
-          <p class="product-spec-line">Levonorgestrel implante subdérmico · 2 varillas · Hasta 5 años</p>
+          <p class="product-number">DKT 04 · Implante Subdérmico</p>
+          <h2>Levoplant®</h2>
+          <p class="product-spec-line">Levonorgestrel 75 mg · 2 implantes subdérmicos · Hasta 3 años · Precalificado OMS</p>
+          <span class="product-oms-badge">✓ Precalificado OMS</span>
           <p>
-            Implante anticonceptivo subdérmico de levonorgestrel en dos varillas, de inserción
-            simple en la cara interna del brazo. Ofrece protección anticonceptiva continua
-            y reversible hasta 5 años sin necesidad de intervención diaria. Alta eficacia
-            con perfil hormonal de bajo impacto sistémico.
+            Implante anticonceptivo subdérmico de levonorgestrel en dos varillas flexibles de
+            silicona. Se inserta mediante procedimiento quirúrgico sencillo en la cara interna
+            del brazo. Libera levonorgestrel de forma continua durante hasta 3 años. Sin
+            estrógeno, reversible y de alta eficacia. Precalificado por la OMS.
           </p>
           <div class="product-tags">
             <span class="product-tag">Subdérmico</span>
-            <span class="product-tag">2 varillas</span>
-            <span class="product-tag">Hasta 5 años</span>
-            <span class="product-tag">Reversible</span>
+            <span class="product-tag">2 varillas silicona</span>
+            <span class="product-tag">Hasta 3 años</span>
+            <span class="product-tag">Precalificado OMS</span>
           </div>
           <a href="https://wa.me/593987980003?text=Hola%2C%20deseo%20cotizar%20Levoplant%20DKT"
              class="btn btn-primary" target="_blank" rel="noopener">
@@ -597,70 +800,36 @@
   </section>
 
   <!-- ============ DKT 05: MISO-FEM ============ -->
-  <section class="product-row" id="misofem" data-color="plum">
+  <section class="product-row alt" id="misofem" data-color="plum">
     <div class="container">
       <div class="product-row-inner">
 
         <div class="product-photo-wrap">
           <div class="product-accent-bar"></div>
-          <div class="product-icon-placeholder" aria-hidden="true" style="background: linear-gradient(135deg, #f0e6f4 0%, #e2d0ed 100%);">🏥</div>
+          <img src="assets/alianzas/miso-fem.jpg" alt="Miso-Fem® — DKT"
+               onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+          <div class="product-icon-placeholder" style="display:none;" aria-hidden="true"></div>
         </div>
 
         <div class="product-info">
           <p class="product-number">DKT 05 · Ginecológico</p>
-          <h2>Miso-Fem</h2>
-          <p class="product-spec-line">Misoprostol 200 mcg · Tableta vaginal / sublingual</p>
+          <h2>Miso-Fem®</h2>
+          <p class="product-spec-line">Misoprostol 200 mcg · Tableta oral · Caja x 4, 12, 40 ó 72 comprimidos</p>
           <p>
-            Análogo de prostaglandina E1 para uso ginecológico. Indicado en la maduración
-            cervical, inducción del parto, manejo del aborto incompleto y tratamiento
-            de la hemorragia postparto. Uso clínico bajo supervisión médica especializada.
-            Presentación de alta pureza con dosificación precisa.
+            Análogo de prostaglandina E1 indicado para el tratamiento y prevención de lesiones
+            gastrointestinales inducidas por AINEs, úlcera duodenal y uso ginecológico bajo
+            supervisión médica. Presentación oral de alta pureza. Disponible en múltiples
+            presentaciones para uso individual e institucional. Medicamento sujeto a prescripción médica.
           </p>
           <div class="product-tags">
             <span class="product-tag">Misoprostol 200 mcg</span>
-            <span class="product-tag">Uso ginecológico</span>
-            <span class="product-tag">Supervisión médica</span>
+            <span class="product-tag">Múltiples presentaciones</span>
+            <span class="product-tag">Prescripción médica</span>
             <span class="product-tag">Uso hospitalario</span>
           </div>
           <a href="https://wa.me/593987980003?text=Hola%2C%20deseo%20cotizar%20Miso-Fem%20DKT"
              class="btn btn-primary" target="_blank" rel="noopener">
             Cotizar Miso-Fem
-          </a>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ DKT 06: AMEU ============ -->
-  <section class="product-row alt" id="ameu" data-color="rose">
-    <div class="container">
-      <div class="product-row-inner">
-
-        <div class="product-photo-wrap">
-          <div class="product-accent-bar"></div>
-          <div class="product-icon-placeholder" aria-hidden="true">🩺</div>
-        </div>
-
-        <div class="product-info">
-          <p class="product-number">DKT 06 · Procedimiento ginecológico</p>
-          <h2>AMEU</h2>
-          <p class="product-spec-line">Kit de Aspiración Manual Endouterina · Completo</p>
-          <p>
-            Kit completo para aspiración manual endouterina, procedimiento seguro y eficaz
-            para el manejo de aborto incompleto, biopsia endometrial y extracción de restos
-            intrauterinos. Equipo de un solo uso, reutilizable o desechable según presentación.
-            Estándar clínico avalado por la OMS.
-          </p>
-          <div class="product-tags">
-            <span class="product-tag">Kit completo</span>
-            <span class="product-tag">Estándar OMS</span>
-            <span class="product-tag">Uso hospitalario</span>
-            <span class="product-tag">Biopsia endometrial</span>
-          </div>
-          <a href="https://wa.me/593987980003?text=Hola%2C%20deseo%20cotizar%20Kit%20AMEU%20DKT"
-             class="btn btn-primary" target="_blank" rel="noopener">
-            Cotizar Kit AMEU
           </a>
         </div>
 
