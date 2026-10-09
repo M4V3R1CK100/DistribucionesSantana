@@ -970,6 +970,44 @@ button:focus-visible {
   color: var(--c-ink-soft);
   opacity: 0.7;
 }
+/* Casilla de consentimiento de datos */
+.form-consent {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-top: 4px;
+  padding: 14px 16px;
+  background: var(--c-paper);
+  border: 1px solid var(--c-line);
+  border-radius: var(--radius);
+}
+.form-consent input[type="checkbox"] {
+  flex-shrink: 0;
+  width: 17px;
+  height: 17px;
+  margin: 2px 0 0;
+  accent-color: var(--c-teal);
+  cursor: pointer;
+}
+.form-consent label {
+  font-size: 0.82rem;
+  line-height: 1.5;
+  color: var(--c-ink);
+  cursor: pointer;
+}
+.form-consent label strong { color: var(--c-navy-deep); }
+.form-consent label a {
+  color: var(--c-navy);
+  font-weight: 600;
+  text-decoration: underline;
+  text-decoration-color: var(--c-line);
+}
+.form-consent label a:hover { text-decoration-color: var(--c-navy); }
+.form-consent:focus-within {
+  border-color: var(--c-teal);
+  box-shadow: 0 0 0 3px rgba(42,140,130,0.12);
+}
+
 .form-submit { margin-top: 6px; }
 .form-success {
   display: none;
