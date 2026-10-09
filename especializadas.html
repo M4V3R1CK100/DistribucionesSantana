@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Alianzas — Distribuciones Santa Ana</title>
-<meta name="description" content="Importadores directos de productos RIVECA desde India: Propofol, Ketorolaco y Paracetamol. Precios de origen, calidad certificada para el sector hospitalario.">
+<meta name="description" content="Importadores directos de RIVECA Pharma y distribuidores de DECATE. Propofol, Ketorolaco, Paracetamol y línea ginecológica. Precios competitivos para el sector hospitalario.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -39,32 +39,46 @@
   line-height: 1.65;
 }
 
-/* RIVECA brand banner */
-.riveca-brand-bar {
-  background: var(--c-teal);
-  padding: 18px 0;
+/* Alliance divider — used for both RIVECA and DECATE brand headers */
+.alliance-divider {
+  padding: 52px 0 44px;
+  border-bottom: 1px solid var(--c-line);
 }
-.riveca-brand-bar .container {
+.alliance-divider .container {
   display: flex;
   align-items: center;
-  gap: 18px;
+  gap: 24px;
 }
-.riveca-brand-bar .rib-badge {
-  background: rgba(255,255,255,0.15);
-  border: 1.5px solid rgba(255,255,255,0.35);
+.alliance-divider-badge {
+  flex-shrink: 0;
   border-radius: 6px;
-  padding: 6px 14px;
-  font-size: 0.78rem;
+  padding: 7px 16px;
+  font-size: 0.8rem;
   font-weight: 700;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.09em;
   text-transform: uppercase;
-  color: #fff;
   white-space: nowrap;
 }
-.riveca-brand-bar p {
-  color: rgba(255,255,255,0.88);
-  font-size: 0.92rem;
-  line-height: 1.5;
+.alliance-divider-badge.riveca {
+  background: rgba(27,74,130,0.08);
+  border: 1.5px solid rgba(27,74,130,0.25);
+  color: #1B4A82;
+}
+.alliance-divider-badge.decate {
+  background: rgba(180,50,100,0.08);
+  border: 1.5px solid rgba(180,50,100,0.28);
+  color: #B43264;
+}
+.alliance-divider-text h3 {
+  font-size: 1.18rem;
+  margin-bottom: 4px;
+  color: var(--c-ink);
+}
+.alliance-divider-text p {
+  color: var(--c-ink-soft);
+  font-size: 0.9rem;
+  line-height: 1.55;
+  margin: 0;
 }
 
 /* PRODUCT ROW */
@@ -117,7 +131,7 @@
   opacity: 0.35;
 }
 
-/* Color accent per product */
+/* Color accent per product — RIVECA */
 .product-row[data-color="propofol"] .product-accent-bar { background: #1B4F9A; }
 .product-row[data-color="propofol"] .product-number { color: #1B4F9A; }
 .product-row[data-color="propofol"] .product-tag { background: rgba(27,79,154,0.07); border-color: rgba(27,79,154,0.25); color: #1B4F9A; }
@@ -130,12 +144,36 @@
 .product-row[data-color="paracetamol"] .product-number { color: #8B1A2F; }
 .product-row[data-color="paracetamol"] .product-tag { background: rgba(139,26,47,0.07); border-color: rgba(139,26,47,0.25); color: #8B1A2F; }
 
+/* Color accent per product — DECATE gynecological */
+.product-row[data-color="rose"] .product-accent-bar { background: #B43264; }
+.product-row[data-color="rose"] .product-number { color: #B43264; }
+.product-row[data-color="rose"] .product-tag { background: rgba(180,50,100,0.07); border-color: rgba(180,50,100,0.25); color: #B43264; }
+
+.product-row[data-color="plum"] .product-accent-bar { background: #7B2D6E; }
+.product-row[data-color="plum"] .product-number { color: #7B2D6E; }
+.product-row[data-color="plum"] .product-tag { background: rgba(123,45,110,0.07); border-color: rgba(123,45,110,0.25); color: #7B2D6E; }
+
+.product-row[data-color="coral"] .product-accent-bar { background: #C44A6A; }
+.product-row[data-color="coral"] .product-number { color: #C44A6A; }
+.product-row[data-color="coral"] .product-tag { background: rgba(196,74,106,0.07); border-color: rgba(196,74,106,0.25); color: #C44A6A; }
+
 /* Accent bar on photo */
 .product-accent-bar {
   position: absolute;
   top: 0; left: 0; right: 0;
   height: 4px;
   border-radius: 0;
+}
+
+/* Photo placeholder icon */
+.product-icon-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #f8f0f4 0%, #ede1e8 100%);
+  font-size: 4rem;
 }
 
 /* Info side */
@@ -183,33 +221,48 @@
   font-weight: 600;
 }
 
-/* Value props */
-.value-strip {
-  background: var(--c-navy-deep);
+/* DECATE hero section */
+.decate-hero {
+  position: relative;
   padding: 64px 0;
-}
-.value-strip-inner {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 32px;
+  background: #3D0A24;
   text-align: center;
+  overflow: hidden;
+  margin-top: 0;
 }
-.value-item {}
-.value-item svg {
-  width: 40px;
-  height: 40px;
-  color: var(--c-gold);
-  margin-bottom: 14px;
+.decate-hero-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 40%;
+  opacity: 0.15;
+  pointer-events: none;
 }
-.value-item h4 {
+.decate-hero .container { position: relative; z-index: 1; }
+.decate-hero .eyebrow {
+  color: #F4A7BF;
+  font-family: var(--font-display);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 10px;
+}
+.decate-hero h2 {
   color: #fff;
-  font-size: 1rem;
-  margin-bottom: 8px;
+  font-size: clamp(1.7rem, 3.5vw, 2.5rem);
+  margin-bottom: 14px;
+  font-family: var(--font-display);
 }
-.value-item p {
-  color: rgba(255,255,255,0.6);
-  font-size: 0.88rem;
-  line-height: 1.6;
+.decate-hero p {
+  color: rgba(255,255,255,0.72);
+  max-width: 560px;
+  margin: 0 auto;
+  font-size: 1rem;
+  line-height: 1.65;
 }
 
 /* CTA */
@@ -226,9 +279,7 @@
   .product-row-inner { grid-template-columns: 1fr; gap: 32px; }
   .product-row.alt .product-row-inner { direction: ltr; }
   .product-photo-wrap { aspect-ratio: 16/9; }
-  .value-strip-inner { grid-template-columns: 1fr; gap: 28px; text-align: left; }
-  .value-item { display: flex; gap: 16px; align-items: flex-start; }
-  .value-item svg { margin-bottom: 0; flex-shrink: 0; }
+  .alliance-divider .container { flex-direction: column; align-items: flex-start; gap: 14px; }
 }
 </style>
 </head>
@@ -265,17 +316,21 @@
       <p class="eyebrow">Alianzas Estratégicas</p>
       <h1>Productos de Importación Directa</h1>
       <p>
-        Importamos directamente desde laboratorios RIVECA, eliminando intermediarios.
-        Precios de origen real, trazabilidad completa y documentación regulatoria en orden.
+        Trabajamos directamente con laboratorios fabricantes, eliminando intermediarios.
+        Precios competitivos de origen, trazabilidad completa y abastecimiento continuo
+        para instituciones de salud a nivel nacional.
       </p>
     </div>
   </section>
 
-  <!-- RIVECA brand bar -->
-  <div class="riveca-brand-bar">
+  <!-- ============ RIVECA BRAND DIVIDER ============ -->
+  <div class="alliance-divider">
     <div class="container">
-      <span class="rib-badge">RIVECA Pharma</span>
-      <p>Importadores directos — documentación ARCSA, registros sanitarios y certificados de importación en regla.</p>
+      <span class="alliance-divider-badge riveca">RIVECA Pharma</span>
+      <div class="alliance-divider-text">
+        <h3>Anestesia y Analgesia Hospitalaria</h3>
+        <p>Alta rotación hospitalaria — tres principios activos esenciales en quirófano y UCI. Stock permanente y despacho ágil a nivel nacional.</p>
+      </div>
     </div>
   </div>
 
@@ -304,7 +359,7 @@
             <span class="product-tag">Uso hospitalario</span>
             <span class="product-tag">UCI / Quirófano</span>
             <span class="product-tag">Vía intravenosa</span>
-            <span class="product-tag">Registro ARCSA</span>
+            <span class="product-tag">Precio competitivo</span>
           </div>
           <a href="https://wa.me/593987980003?text=Hola%2C%20deseo%20cotizar%20Propofol%2010mg%2Fml%20RIVECA"
              class="btn btn-primary" target="_blank" rel="noopener">
@@ -341,7 +396,7 @@
             <span class="product-tag">Postoperatorio</span>
             <span class="product-tag">AINE potente</span>
             <span class="product-tag">Vía parenteral</span>
-            <span class="product-tag">Registro ARCSA</span>
+            <span class="product-tag">Precio competitivo</span>
           </div>
           <a href="https://wa.me/593987980003?text=Hola%2C%20deseo%20cotizar%20Ketorolaco%2030mg%2Fml%20RIVECA"
              class="btn btn-primary" target="_blank" rel="noopener">
@@ -378,7 +433,7 @@
             <span class="product-tag">Analgésico</span>
             <span class="product-tag">Antipirético</span>
             <span class="product-tag">IV · 100 ml</span>
-            <span class="product-tag">Registro ARCSA</span>
+            <span class="product-tag">Precio competitivo</span>
           </div>
           <a href="https://wa.me/593987980003?text=Hola%2C%20deseo%20cotizar%20Paracetamol%2010mg%2Fml%20RIVECA"
              class="btn btn-primary" target="_blank" rel="noopener">
@@ -390,41 +445,241 @@
     </div>
   </section>
 
-  <!-- ============ VALUE PROPS ============ -->
-  <section class="value-strip">
+  <!-- ============ DECATE HERO ============ -->
+  <section class="decate-hero">
+    <img src="assets/alianzas/hero-lab.webp" alt="" class="decate-hero-bg" aria-hidden="true">
     <div class="container">
-      <div class="value-strip-inner">
+      <span class="eyebrow">Andalan Pharma · DECATE</span>
+      <h2>Línea Ginecológica Especializada</h2>
+      <p>
+        Dispositivos intrauterinos, implantes anticonceptivos y medicamentos ginecológicos
+        de última generación. Soluciones de planificación familiar y salud reproductiva
+        con respaldo clínico internacional.
+      </p>
+    </div>
+  </section>
 
-        <div class="value-item">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/>
-            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
-          </svg>
-          <div>
-            <h4>Importación directa</h4>
-            <p>Sin intermediarios. Compramos directo a laboratorios RIVECA en India y trasladamos el ahorro a tu institución.</p>
-          </div>
+  <!-- ============ DECATE BRAND DIVIDER ============ -->
+  <div class="alliance-divider">
+    <div class="container">
+      <span class="alliance-divider-badge decate">DECATE · Ginecología</span>
+      <div class="alliance-divider-text">
+        <h3>Planificación Familiar y Salud Reproductiva</h3>
+        <p>Dispositivos intrauterinos, implantes subdérmicos y anticonceptivos de largo plazo. Stock disponible con precios competitivos para clínicas y hospitales.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ DECATE 01: ANDALAN COPPERFLEX ============ -->
+  <section class="product-row" id="copperflex" data-color="rose">
+    <div class="container">
+      <div class="product-row-inner">
+
+        <div class="product-photo-wrap">
+          <div class="product-accent-bar"></div>
+          <div class="product-icon-placeholder" aria-hidden="true">🔵</div>
         </div>
 
-        <div class="value-item">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="M12 2l9 4.5v6c0 5-3.8 9-9 10.5-5.2-1.5-9-5.5-9-10.5v-6z"/>
-            <path d="M9 12l2 2 4-4"/>
-          </svg>
-          <div>
-            <h4>Documentación completa</h4>
-            <p>Registros ARCSA, certificados de importación y trazabilidad completa de cada lote.</p>
+        <div class="product-info">
+          <p class="product-number">DECATE 01 · DIU Cobre</p>
+          <h2>Andalan CopperFlex</h2>
+          <p class="product-spec-line">DIU de cobre flexible · Eficacia hasta 10 años</p>
+          <p>
+            Dispositivo intrauterino de cobre con diseño flexible que se adapta a la cavidad
+            uterina, minimizando molestias durante la inserción. No hormonal, de acción
+            inmediata, con eficacia anticonceptiva superior al 99%. Ideal para pacientes
+            que prefieren una opción libre de hormonas a largo plazo.
+          </p>
+          <div class="product-tags">
+            <span class="product-tag">No hormonal</span>
+            <span class="product-tag">Hasta 10 años</span>
+            <span class="product-tag">Inserción flexible</span>
+            <span class="product-tag">+99% eficacia</span>
           </div>
+          <a href="https://wa.me/593987980003?text=Hola%2C%20deseo%20cotizar%20Andalan%20CopperFlex%20DECATE"
+             class="btn btn-primary" target="_blank" rel="noopener">
+            Cotizar CopperFlex
+          </a>
         </div>
 
-        <div class="value-item">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
-          </svg>
-          <div>
-            <h4>Alta rotación hospitalaria</h4>
-            <p>Tres principios activos esenciales en quirófano y UCI. Stock permanente y despacho ágil a nivel nacional.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ DECATE 02: ANDALAN SILVER FLEX ============ -->
+  <section class="product-row alt" id="silverflex" data-color="plum">
+    <div class="container">
+      <div class="product-row-inner">
+
+        <div class="product-photo-wrap">
+          <div class="product-accent-bar"></div>
+          <div class="product-icon-placeholder" aria-hidden="true" style="background: linear-gradient(135deg, #ede8f4 0%, #ddd0ec 100%);">🔮</div>
+        </div>
+
+        <div class="product-info">
+          <p class="product-number">DECATE 02 · DIU Plata</p>
+          <h2>Andalan Silver Flex</h2>
+          <p class="product-spec-line">DIU de cobre reforzado con plata · Hasta 10 años</p>
+          <p>
+            Dispositivo intrauterino que combina cobre y plata en su estructura. La adición
+            de plata potencia el efecto anticonceptivo y proporciona propiedades antimicrobianas
+            adicionales. Diseño flexible para mayor comodidad en la inserción y menor tasa
+            de expulsión. Sin hormonas, de acción continua e inmediata.
+          </p>
+          <div class="product-tags">
+            <span class="product-tag">Cobre + plata</span>
+            <span class="product-tag">Antimicrobiano</span>
+            <span class="product-tag">Hasta 10 años</span>
+            <span class="product-tag">Baja tasa expulsión</span>
           </div>
+          <a href="https://wa.me/593987980003?text=Hola%2C%20deseo%20cotizar%20Andalan%20Silver%20Flex%20DECATE"
+             class="btn btn-primary" target="_blank" rel="noopener">
+            Cotizar Silver Flex
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ DECATE 03: LYNDAVEL ============ -->
+  <section class="product-row" id="lyndavel" data-color="rose">
+    <div class="container">
+      <div class="product-row-inner">
+
+        <div class="product-photo-wrap">
+          <div class="product-accent-bar"></div>
+          <div class="product-icon-placeholder" aria-hidden="true">🌸</div>
+        </div>
+
+        <div class="product-info">
+          <p class="product-number">DECATE 03 · SIU Hormonal</p>
+          <h2>Lyndavel</h2>
+          <p class="product-spec-line">Levonorgestrel 52 mg · SIU intrauterino · Hasta 5 años</p>
+          <p>
+            Sistema intrauterino que libera levonorgestrel de forma local y continua.
+            Proporciona anticoncepción altamente efectiva con dosis hormonal mínima sistémica.
+            Además de su efecto anticonceptivo, reduce significativamente el sangrado menstrual,
+            siendo una opción terapéutica para menorragia y endometriosis.
+          </p>
+          <div class="product-tags">
+            <span class="product-tag">Levonorgestrel 52 mg</span>
+            <span class="product-tag">Hasta 5 años</span>
+            <span class="product-tag">Reduce sangrado</span>
+            <span class="product-tag">+99% eficacia</span>
+          </div>
+          <a href="https://wa.me/593987980003?text=Hola%2C%20deseo%20cotizar%20Lyndavel%20DECATE"
+             class="btn btn-primary" target="_blank" rel="noopener">
+            Cotizar Lyndavel
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ DECATE 04: LEVOPLANT ============ -->
+  <section class="product-row alt" id="levoplant" data-color="coral">
+    <div class="container">
+      <div class="product-row-inner">
+
+        <div class="product-photo-wrap">
+          <div class="product-accent-bar"></div>
+          <div class="product-icon-placeholder" aria-hidden="true" style="background: linear-gradient(135deg, #f7e8ed 0%, #f0d0da 100%);">💊</div>
+        </div>
+
+        <div class="product-info">
+          <p class="product-number">DECATE 04 · Implante subdérmico</p>
+          <h2>Levoplant</h2>
+          <p class="product-spec-line">Levonorgestrel implante subdérmico · 2 varillas · Hasta 5 años</p>
+          <p>
+            Implante anticonceptivo subdérmico de levonorgestrel en dos varillas, de inserción
+            simple en la cara interna del brazo. Ofrece protección anticonceptiva continua
+            y reversible hasta 5 años sin necesidad de intervención diaria. Alta eficacia
+            con perfil hormonal de bajo impacto sistémico.
+          </p>
+          <div class="product-tags">
+            <span class="product-tag">Subdérmico</span>
+            <span class="product-tag">2 varillas</span>
+            <span class="product-tag">Hasta 5 años</span>
+            <span class="product-tag">Reversible</span>
+          </div>
+          <a href="https://wa.me/593987980003?text=Hola%2C%20deseo%20cotizar%20Levoplant%20DECATE"
+             class="btn btn-primary" target="_blank" rel="noopener">
+            Cotizar Levoplant
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ DECATE 05: MISO-FEM ============ -->
+  <section class="product-row" id="misofem" data-color="plum">
+    <div class="container">
+      <div class="product-row-inner">
+
+        <div class="product-photo-wrap">
+          <div class="product-accent-bar"></div>
+          <div class="product-icon-placeholder" aria-hidden="true" style="background: linear-gradient(135deg, #f0e6f4 0%, #e2d0ed 100%);">🏥</div>
+        </div>
+
+        <div class="product-info">
+          <p class="product-number">DECATE 05 · Ginecológico</p>
+          <h2>Miso-Fem</h2>
+          <p class="product-spec-line">Misoprostol 200 mcg · Tableta vaginal / sublingual</p>
+          <p>
+            Análogo de prostaglandina E1 para uso ginecológico. Indicado en la maduración
+            cervical, inducción del parto, manejo del aborto incompleto y tratamiento
+            de la hemorragia postparto. Uso clínico bajo supervisión médica especializada.
+            Presentación de alta pureza con dosificación precisa.
+          </p>
+          <div class="product-tags">
+            <span class="product-tag">Misoprostol 200 mcg</span>
+            <span class="product-tag">Uso ginecológico</span>
+            <span class="product-tag">Supervisión médica</span>
+            <span class="product-tag">Uso hospitalario</span>
+          </div>
+          <a href="https://wa.me/593987980003?text=Hola%2C%20deseo%20cotizar%20Miso-Fem%20DECATE"
+             class="btn btn-primary" target="_blank" rel="noopener">
+            Cotizar Miso-Fem
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ DECATE 06: AMEU ============ -->
+  <section class="product-row alt" id="ameu" data-color="rose">
+    <div class="container">
+      <div class="product-row-inner">
+
+        <div class="product-photo-wrap">
+          <div class="product-accent-bar"></div>
+          <div class="product-icon-placeholder" aria-hidden="true">🩺</div>
+        </div>
+
+        <div class="product-info">
+          <p class="product-number">DECATE 06 · Procedimiento ginecológico</p>
+          <h2>AMEU</h2>
+          <p class="product-spec-line">Kit de Aspiración Manual Endouterina · Completo</p>
+          <p>
+            Kit completo para aspiración manual endouterina, procedimiento seguro y eficaz
+            para el manejo de aborto incompleto, biopsia endometrial y extracción de restos
+            intrauterinos. Equipo de un solo uso, reutilizable o desechable según presentación.
+            Estándar clínico avalado por la OMS.
+          </p>
+          <div class="product-tags">
+            <span class="product-tag">Kit completo</span>
+            <span class="product-tag">Estándar OMS</span>
+            <span class="product-tag">Uso hospitalario</span>
+            <span class="product-tag">Biopsia endometrial</span>
+          </div>
+          <a href="https://wa.me/593987980003?text=Hola%2C%20deseo%20cotizar%20Kit%20AMEU%20DECATE"
+             class="btn btn-primary" target="_blank" rel="noopener">
+            Cotizar Kit AMEU
+          </a>
         </div>
 
       </div>
@@ -437,9 +692,9 @@
       <h2>¿Necesitas cotizar volumen institucional?</h2>
       <p>
         Atendemos pedidos de hospitales, clínicas, licitaciones y contratos de suministro continuo.
-        Solicita tu proforma personalizada.
+        Solicita tu proforma personalizada para productos RIVECA o línea ginecológica DECATE.
       </p>
-      <a href="https://wa.me/593987980003?text=Hola%2C%20deseo%20cotizar%20productos%20RIVECA%20para%20mi%20institución"
+      <a href="https://wa.me/593987980003?text=Hola%2C%20deseo%20cotizar%20productos%20para%20mi%20institución"
          class="btn btn-primary" target="_blank" rel="noopener">
         Solicitar cotización por WhatsApp
       </a>
