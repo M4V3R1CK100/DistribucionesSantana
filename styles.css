@@ -759,8 +759,9 @@ button:focus-visible {
   margin-bottom: 12px;
 }
 .product-line-header p {
-  color: var(--c-ink-soft);
+  color: var(--c-navy-deep);
   font-size: 0.94rem;
+  font-weight: 500;
   margin-bottom: 24px;
   line-height: 1.6;
 }
