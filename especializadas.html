@@ -479,6 +479,12 @@
   letter-spacing: 0.03em;
 }
 
+.andalan-versions-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+.andalan-versions-grid .andalan-version-row { margin-bottom: 0; }
 .andalan-versions-label {
   font-size: 0.72rem;
   font-weight: 700;
@@ -786,9 +792,10 @@
           </div>
         </div>
 
-        <!-- Columna derecha: lista de versiones -->
+        <!-- Columna derecha: lista de versiones en 2 columnas -->
         <div class="andalan-versions-col">
           <p class="andalan-versions-label">8 versiones disponibles</p>
+          <div class="andalan-versions-grid">
 
           <div class="andalan-version-row">
             <span class="andalan-version-cu">Cu 380</span>
@@ -837,6 +844,7 @@
             <span class="andalan-version-name">Andalan Copperflex Mini</span>
             <span class="andalan-version-years">Hasta 5 años · talla mini</span>
           </div>
+          </div><!-- /andalan-versions-grid -->
         </div>
 
       </div>
