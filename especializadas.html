@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Alianzas — Distribuciones Santa Ana</title>
-<meta name="description" content="Importadores directos de RIVECA Pharma y distribuidores de DECATE. Propofol, Ketorolaco, Paracetamol y línea ginecológica. Precios competitivos para el sector hospitalario.">
+<meta name="description" content="Importadores directos de RIVECA Pharma y distribuidores de DKT. Propofol, Ketorolaco, Paracetamol y línea ginecológica. Precios competitivos para el sector hospitalario.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -39,46 +39,42 @@
   line-height: 1.65;
 }
 
-/* Alliance divider — used for both RIVECA and DECATE brand headers */
-.alliance-divider {
-  padding: 52px 0 44px;
-  border-bottom: 1px solid var(--c-line);
-}
-.alliance-divider .container {
+/* Hero sub-label for brand */
+.hero-brand-sub {
+  margin-top: 28px;
+  padding-top: 24px;
+  border-top: 1px solid rgba(255,255,255,0.15);
   display: flex;
   align-items: center;
-  gap: 24px;
+  justify-content: center;
+  gap: 14px;
 }
-.alliance-divider-badge {
+.hero-brand-sub .hero-brand-badge {
   flex-shrink: 0;
-  border-radius: 6px;
-  padding: 7px 16px;
-  font-size: 0.8rem;
+  border-radius: 5px;
+  padding: 5px 13px;
+  font-size: 0.75rem;
   font-weight: 700;
   letter-spacing: 0.09em;
   text-transform: uppercase;
   white-space: nowrap;
 }
-.alliance-divider-badge.riveca {
-  background: rgba(27,74,130,0.08);
-  border: 1.5px solid rgba(27,74,130,0.25);
-  color: #1B4A82;
+.hero-brand-badge.riveca {
+  background: rgba(255,255,255,0.12);
+  border: 1.5px solid rgba(255,255,255,0.3);
+  color: #fff;
 }
-.alliance-divider-badge.decate {
-  background: rgba(180,50,100,0.08);
-  border: 1.5px solid rgba(180,50,100,0.28);
-  color: #B43264;
+.hero-brand-badge.dkt {
+  background: rgba(255,255,255,0.12);
+  border: 1.5px solid rgba(255,255,255,0.3);
+  color: #fff;
 }
-.alliance-divider-text h3 {
-  font-size: 1.18rem;
-  margin-bottom: 4px;
-  color: var(--c-ink);
-}
-.alliance-divider-text p {
-  color: var(--c-ink-soft);
-  font-size: 0.9rem;
-  line-height: 1.55;
+.hero-brand-sub p {
+  color: rgba(255,255,255,0.75);
+  font-size: 0.88rem;
+  line-height: 1.5;
   margin: 0;
+  text-align: left;
 }
 
 /* PRODUCT ROW */
@@ -144,7 +140,7 @@
 .product-row[data-color="paracetamol"] .product-number { color: #8B1A2F; }
 .product-row[data-color="paracetamol"] .product-tag { background: rgba(139,26,47,0.07); border-color: rgba(139,26,47,0.25); color: #8B1A2F; }
 
-/* Color accent per product — DECATE gynecological */
+/* Color accent per product — DKT gynecological */
 .product-row[data-color="rose"] .product-accent-bar { background: #B43264; }
 .product-row[data-color="rose"] .product-number { color: #B43264; }
 .product-row[data-color="rose"] .product-tag { background: rgba(180,50,100,0.07); border-color: rgba(180,50,100,0.25); color: #B43264; }
@@ -221,27 +217,26 @@
   font-weight: 600;
 }
 
-/* DECATE hero section */
-.decate-hero {
+/* DKT hero section */
+.dkt-hero {
   position: relative;
-  padding: 64px 0;
+  padding: calc(var(--header-h) + 0px) 0 0;
   background: #3D0A24;
   text-align: center;
   overflow: hidden;
-  margin-top: 0;
 }
-.decate-hero-bg {
+.dkt-hero-bg {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: center 40%;
-  opacity: 0.15;
+  opacity: 0.20;
   pointer-events: none;
 }
-.decate-hero .container { position: relative; z-index: 1; }
-.decate-hero .eyebrow {
+.dkt-hero .container { position: relative; z-index: 1; padding-top: 48px; padding-bottom: 48px; }
+.dkt-hero .eyebrow {
   color: #F4A7BF;
   font-family: var(--font-display);
   font-size: 0.78rem;
@@ -251,15 +246,15 @@
   display: block;
   margin-bottom: 10px;
 }
-.decate-hero h2 {
+.dkt-hero h2 {
   color: #fff;
-  font-size: clamp(1.7rem, 3.5vw, 2.5rem);
+  font-size: clamp(1.9rem, 4vw, 2.8rem);
   margin-bottom: 14px;
   font-family: var(--font-display);
 }
-.decate-hero p {
+.dkt-hero > .container > p, .dkt-hero .hero-desc {
   color: rgba(255,255,255,0.72);
-  max-width: 560px;
+  max-width: 580px;
   margin: 0 auto;
   font-size: 1rem;
   line-height: 1.65;
@@ -309,7 +304,7 @@
 
 <main>
 
-  <!-- ============ HERO ============ -->
+  <!-- ============ HERO RIVECA ============ -->
   <section class="alianzas-hero">
     <img src="assets/alianzas/hero-lab.webp" alt="" class="alianzas-hero-bg" aria-hidden="true">
     <div class="container">
@@ -320,19 +315,12 @@
         Precios competitivos de origen, trazabilidad completa y abastecimiento continuo
         para instituciones de salud a nivel nacional.
       </p>
-    </div>
-  </section>
-
-  <!-- ============ RIVECA BRAND DIVIDER ============ -->
-  <div class="alliance-divider">
-    <div class="container">
-      <span class="alliance-divider-badge riveca">RIVECA Pharma</span>
-      <div class="alliance-divider-text">
-        <h3>Anestesia y Analgesia Hospitalaria</h3>
-        <p>Alta rotación hospitalaria — tres principios activos esenciales en quirófano y UCI. Stock permanente y despacho ágil a nivel nacional.</p>
+      <div class="hero-brand-sub">
+        <span class="hero-brand-badge riveca">RIVECA Pharma</span>
+        <p>Anestesia y Analgesia Hospitalaria — alta rotación en quirófano y UCI. Stock permanente y despacho ágil a nivel nacional.</p>
       </div>
     </div>
-  </div>
+  </section>
 
   <!-- ============ PRODUCTO 1: PROPOFOL ============ -->
   <section class="product-row" id="propofol" data-color="propofol">
@@ -445,32 +433,26 @@
     </div>
   </section>
 
-  <!-- ============ DECATE HERO ============ -->
-  <section class="decate-hero">
-    <img src="assets/alianzas/hero-lab.webp" alt="" class="decate-hero-bg" aria-hidden="true">
+  <!-- ============ HERO DKT ============ -->
+  <section class="dkt-hero">
+    <img src="assets/alianzas/hero-dkt.jpg" alt="" class="dkt-hero-bg" aria-hidden="true"
+         onerror="this.style.display='none'">
     <div class="container">
-      <span class="eyebrow">Andalan Pharma · DECATE</span>
+      <span class="eyebrow">Andalan Pharma · DKT</span>
       <h2>Línea Ginecológica Especializada</h2>
-      <p>
+      <p class="hero-desc">
         Dispositivos intrauterinos, implantes anticonceptivos y medicamentos ginecológicos
         de última generación. Soluciones de planificación familiar y salud reproductiva
         con respaldo clínico internacional.
       </p>
+      <div class="hero-brand-sub">
+        <span class="hero-brand-badge dkt">DKT · Ginecología</span>
+        <p>Planificación familiar y salud reproductiva — DIU, implantes subdérmicos y anticonceptivos de largo plazo. Precios competitivos para clínicas y hospitales.</p>
+      </div>
     </div>
   </section>
 
-  <!-- ============ DECATE BRAND DIVIDER ============ -->
-  <div class="alliance-divider">
-    <div class="container">
-      <span class="alliance-divider-badge decate">DECATE · Ginecología</span>
-      <div class="alliance-divider-text">
-        <h3>Planificación Familiar y Salud Reproductiva</h3>
-        <p>Dispositivos intrauterinos, implantes subdérmicos y anticonceptivos de largo plazo. Stock disponible con precios competitivos para clínicas y hospitales.</p>
-      </div>
-    </div>
-  </div>
-
-  <!-- ============ DECATE 01: ANDALAN COPPERFLEX ============ -->
+  <!-- ============ DKT 01: ANDALAN COPPERFLEX ============ -->
   <section class="product-row" id="copperflex" data-color="rose">
     <div class="container">
       <div class="product-row-inner">
@@ -481,7 +463,7 @@
         </div>
 
         <div class="product-info">
-          <p class="product-number">DECATE 01 · DIU Cobre</p>
+          <p class="product-number">DKT 01 · DIU Cobre</p>
           <h2>Andalan CopperFlex</h2>
           <p class="product-spec-line">DIU de cobre flexible · Eficacia hasta 10 años</p>
           <p>
@@ -496,7 +478,7 @@
             <span class="product-tag">Inserción flexible</span>
             <span class="product-tag">+99% eficacia</span>
           </div>
-          <a href="https://wa.me/593987980003?text=Hola%2C%20deseo%20cotizar%20Andalan%20CopperFlex%20DECATE"
+          <a href="https://wa.me/593987980003?text=Hola%2C%20deseo%20cotizar%20Andalan%20CopperFlex%20DKT"
              class="btn btn-primary" target="_blank" rel="noopener">
             Cotizar CopperFlex
           </a>
@@ -506,7 +488,7 @@
     </div>
   </section>
 
-  <!-- ============ DECATE 02: ANDALAN SILVER FLEX ============ -->
+  <!-- ============ DKT 02: ANDALAN SILVER FLEX ============ -->
   <section class="product-row alt" id="silverflex" data-color="plum">
     <div class="container">
       <div class="product-row-inner">
@@ -517,7 +499,7 @@
         </div>
 
         <div class="product-info">
-          <p class="product-number">DECATE 02 · DIU Plata</p>
+          <p class="product-number">DKT 02 · DIU Plata</p>
           <h2>Andalan Silver Flex</h2>
           <p class="product-spec-line">DIU de cobre reforzado con plata · Hasta 10 años</p>
           <p>
@@ -532,7 +514,7 @@
             <span class="product-tag">Hasta 10 años</span>
             <span class="product-tag">Baja tasa expulsión</span>
           </div>
-          <a href="https://wa.me/593987980003?text=Hola%2C%20deseo%20cotizar%20Andalan%20Silver%20Flex%20DECATE"
+          <a href="https://wa.me/593987980003?text=Hola%2C%20deseo%20cotizar%20Andalan%20Silver%20Flex%20DKT"
              class="btn btn-primary" target="_blank" rel="noopener">
             Cotizar Silver Flex
           </a>
@@ -542,7 +524,7 @@
     </div>
   </section>
 
-  <!-- ============ DECATE 03: LYNDAVEL ============ -->
+  <!-- ============ DKT 03: LYNDAVEL ============ -->
   <section class="product-row" id="lyndavel" data-color="rose">
     <div class="container">
       <div class="product-row-inner">
@@ -553,7 +535,7 @@
         </div>
 
         <div class="product-info">
-          <p class="product-number">DECATE 03 · SIU Hormonal</p>
+          <p class="product-number">DKT 03 · SIU Hormonal</p>
           <h2>Lyndavel</h2>
           <p class="product-spec-line">Levonorgestrel 52 mg · SIU intrauterino · Hasta 5 años</p>
           <p>
@@ -568,7 +550,7 @@
             <span class="product-tag">Reduce sangrado</span>
             <span class="product-tag">+99% eficacia</span>
           </div>
-          <a href="https://wa.me/593987980003?text=Hola%2C%20deseo%20cotizar%20Lyndavel%20DECATE"
+          <a href="https://wa.me/593987980003?text=Hola%2C%20deseo%20cotizar%20Lyndavel%20DKT"
              class="btn btn-primary" target="_blank" rel="noopener">
             Cotizar Lyndavel
           </a>
@@ -578,7 +560,7 @@
     </div>
   </section>
 
-  <!-- ============ DECATE 04: LEVOPLANT ============ -->
+  <!-- ============ DKT 04: LEVOPLANT ============ -->
   <section class="product-row alt" id="levoplant" data-color="coral">
     <div class="container">
       <div class="product-row-inner">
@@ -589,7 +571,7 @@
         </div>
 
         <div class="product-info">
-          <p class="product-number">DECATE 04 · Implante subdérmico</p>
+          <p class="product-number">DKT 04 · Implante subdérmico</p>
           <h2>Levoplant</h2>
           <p class="product-spec-line">Levonorgestrel implante subdérmico · 2 varillas · Hasta 5 años</p>
           <p>
@@ -604,7 +586,7 @@
             <span class="product-tag">Hasta 5 años</span>
             <span class="product-tag">Reversible</span>
           </div>
-          <a href="https://wa.me/593987980003?text=Hola%2C%20deseo%20cotizar%20Levoplant%20DECATE"
+          <a href="https://wa.me/593987980003?text=Hola%2C%20deseo%20cotizar%20Levoplant%20DKT"
              class="btn btn-primary" target="_blank" rel="noopener">
             Cotizar Levoplant
           </a>
@@ -614,7 +596,7 @@
     </div>
   </section>
 
-  <!-- ============ DECATE 05: MISO-FEM ============ -->
+  <!-- ============ DKT 05: MISO-FEM ============ -->
   <section class="product-row" id="misofem" data-color="plum">
     <div class="container">
       <div class="product-row-inner">
@@ -625,7 +607,7 @@
         </div>
 
         <div class="product-info">
-          <p class="product-number">DECATE 05 · Ginecológico</p>
+          <p class="product-number">DKT 05 · Ginecológico</p>
           <h2>Miso-Fem</h2>
           <p class="product-spec-line">Misoprostol 200 mcg · Tableta vaginal / sublingual</p>
           <p>
@@ -640,7 +622,7 @@
             <span class="product-tag">Supervisión médica</span>
             <span class="product-tag">Uso hospitalario</span>
           </div>
-          <a href="https://wa.me/593987980003?text=Hola%2C%20deseo%20cotizar%20Miso-Fem%20DECATE"
+          <a href="https://wa.me/593987980003?text=Hola%2C%20deseo%20cotizar%20Miso-Fem%20DKT"
              class="btn btn-primary" target="_blank" rel="noopener">
             Cotizar Miso-Fem
           </a>
@@ -650,7 +632,7 @@
     </div>
   </section>
 
-  <!-- ============ DECATE 06: AMEU ============ -->
+  <!-- ============ DKT 06: AMEU ============ -->
   <section class="product-row alt" id="ameu" data-color="rose">
     <div class="container">
       <div class="product-row-inner">
@@ -661,7 +643,7 @@
         </div>
 
         <div class="product-info">
-          <p class="product-number">DECATE 06 · Procedimiento ginecológico</p>
+          <p class="product-number">DKT 06 · Procedimiento ginecológico</p>
           <h2>AMEU</h2>
           <p class="product-spec-line">Kit de Aspiración Manual Endouterina · Completo</p>
           <p>
@@ -676,7 +658,7 @@
             <span class="product-tag">Uso hospitalario</span>
             <span class="product-tag">Biopsia endometrial</span>
           </div>
-          <a href="https://wa.me/593987980003?text=Hola%2C%20deseo%20cotizar%20Kit%20AMEU%20DECATE"
+          <a href="https://wa.me/593987980003?text=Hola%2C%20deseo%20cotizar%20Kit%20AMEU%20DKT"
              class="btn btn-primary" target="_blank" rel="noopener">
             Cotizar Kit AMEU
           </a>
@@ -692,7 +674,7 @@
       <h2>¿Necesitas cotizar volumen institucional?</h2>
       <p>
         Atendemos pedidos de hospitales, clínicas, licitaciones y contratos de suministro continuo.
-        Solicita tu proforma personalizada para productos RIVECA o línea ginecológica DECATE.
+        Solicita tu proforma personalizada para productos RIVECA o línea ginecológica DKT.
       </p>
       <a href="https://wa.me/593987980003?text=Hola%2C%20deseo%20cotizar%20productos%20para%20mi%20institución"
          class="btn btn-primary" target="_blank" rel="noopener">
