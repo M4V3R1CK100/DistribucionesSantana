@@ -398,8 +398,93 @@
   background: #B43264;
   flex-shrink: 0;
 }
-.andalan-cta-wrap {
-  text-align: center;
+/* ── ANDALAN redesign: 2-col layout + version rows ── */
+.andalan-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: center;
+}
+.andalan-info-col .product-number { margin-bottom: 8px; }
+.andalan-info-col h2 {
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  margin-bottom: 14px;
+  position: relative;
+  padding-bottom: 14px;
+}
+.andalan-info-col h2::after {
+  content: '';
+  position: absolute;
+  left: 0; bottom: 0;
+  width: 40px; height: 2px;
+  background: #B43264;
+  border-radius: 2px;
+}
+.andalan-info-col > p {
+  color: var(--c-ink-soft);
+  line-height: 1.7;
+  margin-bottom: 32px;
+}
+.andalan-info-col .product-tags { margin-bottom: 32px; }
+.andalan-cta-wrap { margin-top: 0; }
+
+.andalan-versions-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #B43264;
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.andalan-versions-label::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: rgba(180,50,100,0.2);
+}
+.andalan-version-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 12px 16px;
+  background: #fff;
+  border-radius: 8px;
+  margin-bottom: 8px;
+  border-left: 3px solid #B43264;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  transition: box-shadow 0.18s, transform 0.18s;
+}
+.andalan-version-row:hover {
+  box-shadow: 0 4px 16px rgba(180,50,100,0.13);
+  transform: translateX(4px);
+}
+.andalan-version-cu {
+  flex-shrink: 0;
+  background: rgba(180,50,100,0.09);
+  border: 1px solid rgba(180,50,100,0.25);
+  color: #B43264;
+  border-radius: 4px;
+  padding: 3px 8px;
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.03em;
+  white-space: nowrap;
+}
+.andalan-version-name {
+  flex: 1;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--c-ink);
+  font-family: var(--font-display);
+}
+.andalan-version-years {
+  flex-shrink: 0;
+  font-size: 0.75rem;
+  color: var(--c-ink-soft);
+  white-space: nowrap;
 }
 
 /* Responsive */
@@ -408,10 +493,7 @@
   .product-row.alt .product-row-inner { direction: ltr; }
   .product-photo-wrap { aspect-ratio: 16/9; }
   .alliance-divider .container { flex-direction: column; align-items: flex-start; gap: 14px; }
-  .andalan-grid { grid-template-columns: repeat(2, 1fr); }
-}
-@media (max-width: 560px) {
-  .andalan-grid { grid-template-columns: 1fr; }
+  .andalan-layout { grid-template-columns: 1fr; gap: 40px; }
 }
 </style>
 </head>
@@ -629,96 +711,69 @@
   </section>
 
   <!-- ============ DKT 02: ANDALAN — 5 versiones ============ -->
-  <section class="andalan-section" id="andalan" data-color="rose">
+  <section class="andalan-section" id="andalan">
     <div class="container">
+      <div class="andalan-layout">
 
-      <div class="andalan-intro">
-        <p class="product-number" style="color:#B43264;">Línea Andalan · DKT</p>
-        <h2>DIU Andalan — 5 Versiones</h2>
-        <p>Dispositivos intrauterinos de cobre libres de hormonas. Efectividad mayor al 99%, inserción rápida y método reversible de inmediato. Disponibles en 5 versiones para adaptarse a cada paciente.</p>
-      </div>
-
-      <div class="andalan-grid">
-
-        <!-- Card 1: Classic Cu 380 -->
-        <div class="andalan-card">
-          <h3>Andalan Classic Cu 380</h3>
-          <div class="andalan-badges">
-            <span class="andalan-card-badge">Cu 380</span>
-            <span class="andalan-card-duration">Hasta 10 años</span>
+        <!-- Columna izquierda: info + CTA -->
+        <div class="andalan-info-col">
+          <p class="product-number">DKT 02 · DIU de Cobre</p>
+          <h2>Línea DIU Andalan</h2>
+          <p>
+            Dispositivos intrauterinos de cobre libres de hormonas. Efectividad mayor al 99%,
+            inserción rápida y reversible de inmediato. Sin interferencia en la lactancia ni
+            en las relaciones sexuales. Indicado desde la adolescencia hasta la menopausia.
+          </p>
+          <div class="product-tags">
+            <span class="product-tag" style="background:rgba(180,50,100,0.07);border-color:rgba(180,50,100,0.25);color:#B43264;">Sin hormonas</span>
+            <span class="product-tag" style="background:rgba(180,50,100,0.07);border-color:rgba(180,50,100,0.25);color:#B43264;">+99% eficacia</span>
+            <span class="product-tag" style="background:rgba(180,50,100,0.07);border-color:rgba(180,50,100,0.25);color:#B43264;">Reversible</span>
+            <span class="product-tag" style="background:rgba(180,50,100,0.07);border-color:rgba(180,50,100,0.25);color:#B43264;">5 versiones</span>
           </div>
-          <ul class="andalan-card-bullets">
-            <li>DIU en T de cobre</li>
-            <li>Brazos rígidos estándar</li>
-            <li>Radiopaco con sulfato de bario</li>
-          </ul>
+          <div class="andalan-cta-wrap">
+            <a href="https://wa.me/593987980003?text=Hola%2C%20deseo%20cotizar%20DIU%20Andalan%20DKT"
+               class="btn btn-primary" target="_blank" rel="noopener">
+              Cotizar DIU Andalan
+            </a>
+          </div>
         </div>
 
-        <!-- Card 2: Classic Posparto Cu 380 -->
-        <div class="andalan-card">
-          <h3>Andalan Classic Posparto Cu 380</h3>
-          <div class="andalan-badges">
-            <span class="andalan-card-badge">Cu 380</span>
-            <span class="andalan-card-duration">Inserción inmediata posparto</span>
-          </div>
-          <ul class="andalan-card-bullets">
-            <li>Aplicador especial posparto</li>
-            <li>Inserción en 10 min post-expulsión</li>
-            <li>Para parto normal o cesárea</li>
-          </ul>
-        </div>
+        <!-- Columna derecha: lista de versiones -->
+        <div class="andalan-versions-col">
+          <p class="andalan-versions-label">5 versiones disponibles</p>
 
-        <!-- Card 3: Comfort Cu 375 -->
-        <div class="andalan-card">
-          <h3>Andalan Comfort Cu 375</h3>
-          <div class="andalan-badges">
-            <span class="andalan-card-badge">Cu 375</span>
-            <span class="andalan-card-duration">Hasta 5 años</span>
+          <div class="andalan-version-row">
+            <span class="andalan-version-cu">Cu 380</span>
+            <span class="andalan-version-name">Andalan Classic</span>
+            <span class="andalan-version-years">Hasta 10 años</span>
           </div>
-          <ul class="andalan-card-bullets">
-            <li>Brazos curvos formato omega</li>
-            <li>Menor tasa de expulsión</li>
-            <li>Diseño ergonómico</li>
-          </ul>
-        </div>
 
-        <!-- Card 4: Comfort Mini Cu 375 -->
-        <div class="andalan-card">
-          <h3>Andalan Comfort Mini Cu 375</h3>
-          <div class="andalan-badges">
-            <span class="andalan-card-badge">Cu 375 Mini</span>
-            <span class="andalan-card-duration">Hasta 5 años</span>
+          <div class="andalan-version-row">
+            <span class="andalan-version-cu">Cu 380</span>
+            <span class="andalan-version-name">Andalan Classic Posparto</span>
+            <span class="andalan-version-years">Inserción inmediata</span>
           </div>
-          <ul class="andalan-card-bullets">
-            <li>Para cavidad uterina pequeña</li>
-            <li>Ideal para nulíparas</li>
-            <li>Brazo vertical reducido</li>
-          </ul>
-        </div>
 
-        <!-- Card 5: Silverflex Cu 380 Ag -->
-        <div class="andalan-card">
-          <h3>Andalan Silverflex Cu 380 Ag</h3>
-          <div class="andalan-badges">
-            <span class="andalan-card-badge">Cu 380 Ag</span>
-            <span class="andalan-card-duration">Hasta 5 años</span>
+          <div class="andalan-version-row">
+            <span class="andalan-version-cu">Cu 375</span>
+            <span class="andalan-version-name">Andalan Comfort</span>
+            <span class="andalan-version-years">Hasta 5 años</span>
           </div>
-          <ul class="andalan-card-bullets">
-            <li>Cobre + plata antimicrobiana</li>
-            <li>Brazos más flexibles</li>
-            <li>Inserción más cómoda</li>
-          </ul>
+
+          <div class="andalan-version-row">
+            <span class="andalan-version-cu">Cu 375</span>
+            <span class="andalan-version-name">Andalan Comfort Mini</span>
+            <span class="andalan-version-years">Hasta 5 años</span>
+          </div>
+
+          <div class="andalan-version-row">
+            <span class="andalan-version-cu">Cu 380 Ag</span>
+            <span class="andalan-version-name">Andalan Silverflex</span>
+            <span class="andalan-version-years">Hasta 5 años</span>
+          </div>
         </div>
 
       </div>
-
-      <div class="andalan-cta-wrap">
-        <a href="https://wa.me/593987980003?text=Hola%2C%20deseo%20cotizar%20DIU%20Andalan%20DKT"
-           class="btn btn-primary" target="_blank" rel="noopener">
-          Cotizar DIU Andalan
-        </a>
-      </div>
-
     </div>
   </section>
 
