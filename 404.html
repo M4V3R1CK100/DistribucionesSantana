@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Página no encontrada — Distribuciones Santa Ana</title>
+<meta name="description" content="La página que buscas no existe o fue movida. Vuelve al inicio o escríbenos para encontrar lo que necesitas.">
+<meta name="robots" content="noindex, follow">
+<link rel="icon" href="/assets/favicon.ico" sizes="16x16 32x32 48x48">
+<link rel="icon" type="image/png" href="/assets/favicon.png" sizes="512x512">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<meta name="theme-color" content="#122740">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/styles.css">
+<style>
+.error-page {
+  min-height: calc(100vh - var(--header-h) - 240px);
+  display: flex;
+  align-items: center;
+  padding: 80px 0;
+  background: var(--c-panel);
+}
+.error-inner { max-width: 620px; }
+.error-code {
+  font-family: var(--font-display);
+  font-size: clamp(4.5rem, 12vw, 7rem);
+  font-weight: 700;
+  color: var(--c-line);
+  line-height: 1;
+  display: block;
+  margin-bottom: 4px;
+}
+.error-page h1 {
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  margin-bottom: 14px;
+}
+.error-page > .container > .error-inner > p {
+  color: var(--c-ink-soft);
+  font-size: 1rem;
+  line-height: 1.7;
+  margin-bottom: 32px;
+}
+.error-actions {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+}
+.error-links {
+  padding-top: 28px;
+  border-top: 1px solid var(--c-line);
+}
+.error-links p {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--c-ink-soft);
+  margin-bottom: 14px;
+}
+.error-links ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.error-links a {
+  display: inline-block;
+  padding: 8px 16px;
+  background: #fff;
+  border: 1px solid var(--c-line);
+  border-radius: 20px;
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: var(--c-navy-deep);
+  transition: border-color 0.15s ease, transform 0.15s ease;
+}
+.error-links a:hover {
+  border-color: var(--c-teal);
+  transform: translateY(-1px);
+}
+</style>
+</head>
+<body>
+
+<!-- ============ HEADER ============ -->
+<header class="site-header" id="top">
+  <div class="container header-inner">
+    <a href="/index.html" class="brand">
+      <img src="/assets/logo.png" alt="Distribuciones Santa Ana" class="brand-logo">
+    </a>
+    <nav class="main-nav" id="main-nav">
+      <a href="/index.html">Inicio</a>
+      <a href="/nosotros.html">Nosotros</a>
+      <a href="/productos.html">Productos</a>
+      <a href="/especializadas.html">Alianzas</a>
+      <a href="/contacto.html">Contacto</a>
+    </nav>
+    <a href="https://wa.me/593987980003?text=Hola%2C%20deseo%20solicitar%20una%20cotización" class="btn btn-primary nav-cta" target="_blank" rel="noopener">
+      Escríbenos por WhatsApp
+    </a>
+    <button class="nav-toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="main-nav">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main>
+  <section class="error-page">
+    <div class="container">
+      <div class="error-inner">
+        <span class="error-code">404</span>
+        <p class="eyebrow">Página no encontrada</p>
+        <h1>Esta página no existe o fue movida</h1>
+        <p>
+          Puede que el enlace esté desactualizado o que haya un error en la dirección.
+          Desde el inicio puedes llegar a todo el catálogo, o escríbenos directamente
+          y te ayudamos a encontrar el producto que buscas.
+        </p>
+        <div class="error-actions">
+          <a href="/index.html" class="btn btn-primary">Volver al inicio</a>
+          <a href="https://wa.me/593987980003?text=Hola%2C%20deseo%20solicitar%20una%20cotización"
+             class="btn btn-ghost" target="_blank" rel="noopener">Escríbenos por WhatsApp</a>
+        </div>
+        <div class="error-links">
+          <p>Enlaces útiles</p>
+          <ul>
+            <li><a href="/productos.html">Catálogo general</a></li>
+            <li><a href="/especializadas.html#riveca">Productos RIVECA</a></li>
+            <li><a href="/especializadas.html#dkt">Línea ginecológica DKT</a></li>
+            <li><a href="/nosotros.html">Nosotros</a></li>
+            <li><a href="/contacto.html">Contacto</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div class="brand brand--footer">
+      <img src="/assets/logo.png" alt="Distribuciones Santa Ana" class="brand-logo" style="filter: brightness(0) invert(1); opacity: 0.92;">
+    </div>
+    <p class="footer-note">Distribución al por mayor de medicamentos e insumos médicos — Manta, Ecuador.</p>
+    <p class="footer-note" style="margin-top:6px;">
+      <a href="mailto:info@distribucionessantaana.com" style="color:inherit;text-decoration:none;border-bottom:1px solid rgba(255,255,255,0.3);">info@distribucionessantaana.com</a>
+      &nbsp;·&nbsp;
+      <a href="https://wa.me/593987980003" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;border-bottom:1px solid rgba(255,255,255,0.3);">0987 980 003</a>
+    </p>
+    <p class="footer-copy">© 2026 Distribuciones Santa Ana. Todos los derechos reservados. Manta, Ecuador.</p>
+  </div>
+</footer>
+
+<!-- ============ BOTÓN FLOTANTE WHATSAPP ============ -->
+<a href="https://wa.me/593987980003?text=Hola%2C%20deseo%20solicitar%20una%20cotización"
+   class="whatsapp-float" target="_blank" rel="noopener" aria-label="Escribir por WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-1.746-.873-2.888-1.557-4.034-3.532-.305-.524.305-.487.873-1.625.097-.198.05-.371-.05-.52-.099-.149-.669-1.61-.916-2.207-.247-.595-.5-.5-.69-.51-.18-.01-.39-.012-.598-.012-.21 0-.547.075-.84.373-.293.298-1.116 1.09-1.116 2.658 0 1.567 1.14 3.08 1.3 3.296.158.215 2.182 3.33 5.288 4.535 2.642 1.024 3.18.82 3.755.764.574-.057 1.857-.76 2.117-1.49.26-.732.26-1.36.182-1.49-.078-.13-.298-.207-.595-.357z"/>
+    <path d="M12.05 2C6.55 2 2.05 6.46 2.05 11.92c0 1.93.55 3.73 1.5 5.27L2 22l4.95-1.5a10.1 10.1 0 0 0 5.1 1.37c5.5 0 10-4.46 10-9.92S17.55 2 12.05 2zm0 18.18c-1.7 0-3.3-.47-4.66-1.29l-.33-.2-3.45 1.05 1.07-3.36-.22-.34a8.17 8.17 0 0 1-1.36-4.52c0-4.5 3.7-8.15 8.25-8.15s8.25 3.65 8.25 8.15-3.7 8.15-8.25 8.15z"/>
+  </svg>
+</a>
+
+<script src="/script.js"></script>
+</body>
+</html>
