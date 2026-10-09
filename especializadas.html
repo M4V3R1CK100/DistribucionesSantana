@@ -398,19 +398,20 @@
   background: #B43264;
   flex-shrink: 0;
 }
-/* ── ANDALAN redesign: 2-col layout + version rows ── */
+/* ── ANDALAN redesign: 2-col layout + version rows + photo strip ── */
 .andalan-layout {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 64px;
-  align-items: center;
+  gap: 56px;
+  align-items: start;
+  margin-bottom: 40px;
 }
 .andalan-info-col .product-number { margin-bottom: 8px; }
 .andalan-info-col h2 {
-  font-size: clamp(1.6rem, 3vw, 2.2rem);
-  margin-bottom: 14px;
+  font-size: clamp(1.5rem, 2.8vw, 2rem);
+  margin-bottom: 10px;
   position: relative;
-  padding-bottom: 14px;
+  padding-bottom: 12px;
 }
 .andalan-info-col h2::after {
   content: '';
@@ -422,11 +423,60 @@
 }
 .andalan-info-col > p {
   color: var(--c-ink-soft);
-  line-height: 1.7;
-  margin-bottom: 32px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  font-size: 0.93rem;
 }
-.andalan-info-col .product-tags { margin-bottom: 32px; }
+.andalan-info-col .product-tags { margin-bottom: 24px; }
 .andalan-cta-wrap { margin-top: 0; }
+
+/* Photo strip */
+.andalan-photos {
+  display: grid;
+  grid-template-columns: 1fr 1fr 0.55fr;
+  gap: 12px;
+}
+.andalan-photo-panel {
+  border-radius: 10px;
+  overflow: hidden;
+  background: rgba(180,50,100,0.06);
+  border: 1px solid rgba(180,50,100,0.18);
+  position: relative;
+}
+.andalan-photo-panel img {
+  width: 100%;
+  aspect-ratio: 3/4;
+  object-fit: cover;
+  display: block;
+}
+.andalan-photo-panel .andalan-photo-placeholder {
+  width: 100%;
+  aspect-ratio: 3/4;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  color: rgba(180,50,100,0.5);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  text-align: center;
+  padding: 12px;
+}
+.andalan-photo-placeholder svg { opacity: 0.35; }
+.andalan-photo-label {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  background: linear-gradient(transparent, rgba(27,18,24,0.72));
+  color: #fff;
+  font-size: 0.7rem;
+  font-weight: 600;
+  padding: 18px 10px 8px;
+  text-align: center;
+  letter-spacing: 0.03em;
+}
 
 .andalan-versions-label {
   font-size: 0.72rem;
@@ -493,7 +543,8 @@
   .product-row.alt .product-row-inner { direction: ltr; }
   .product-photo-wrap { aspect-ratio: 16/9; }
   .alliance-divider .container { flex-direction: column; align-items: flex-start; gap: 14px; }
-  .andalan-layout { grid-template-columns: 1fr; gap: 40px; }
+  .andalan-layout { grid-template-columns: 1fr; gap: 32px; }
+  .andalan-photos { grid-template-columns: 1fr 1fr 1fr; }
 }
 </style>
 </head>
@@ -719,11 +770,7 @@
         <div class="andalan-info-col">
           <p class="product-number">DKT 02 · DIU de Cobre</p>
           <h2>Línea DIU Andalan</h2>
-          <p>
-            Dispositivos intrauterinos de cobre libres de hormonas. Efectividad mayor al 99%,
-            inserción rápida y reversible de inmediato. Sin interferencia en la lactancia ni
-            en las relaciones sexuales. Indicado desde la adolescencia hasta la menopausia.
-          </p>
+          <p>DIU de cobre libre de hormonas. Eficacia &gt;99%, inserción rápida y reversible. Sin impacto en lactancia. 5 versiones para cada necesidad clínica.</p>
           <div class="product-tags">
             <span class="product-tag" style="background:rgba(180,50,100,0.07);border-color:rgba(180,50,100,0.25);color:#B43264;">Sin hormonas</span>
             <span class="product-tag" style="background:rgba(180,50,100,0.07);border-color:rgba(180,50,100,0.25);color:#B43264;">+99% eficacia</span>
@@ -774,6 +821,45 @@
         </div>
 
       </div>
+
+      <!-- Fila de fotos: 2 cajas | 2 cajas | 1 caja -->
+      <div class="andalan-photos">
+
+        <!-- Panel 1: Classic + Classic Posparto -->
+        <div class="andalan-photo-panel">
+          <img src="assets/alianzas/andalan-group1.jpg" alt="Andalan Classic y Classic Posparto"
+               onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="andalan-photo-placeholder" style="display:none">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+            Classic &amp; Classic Posparto
+          </div>
+          <div class="andalan-photo-label">Classic · Classic Posparto</div>
+        </div>
+
+        <!-- Panel 2: Comfort + Comfort Mini -->
+        <div class="andalan-photo-panel">
+          <img src="assets/alianzas/andalan-group2.jpg" alt="Andalan Comfort y Comfort Mini"
+               onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="andalan-photo-placeholder" style="display:none">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+            Comfort &amp; Comfort Mini
+          </div>
+          <div class="andalan-photo-label">Comfort · Comfort Mini</div>
+        </div>
+
+        <!-- Panel 3: Silverflex (solo) -->
+        <div class="andalan-photo-panel">
+          <img src="assets/alianzas/andalan-group3.jpg" alt="Andalan Silverflex"
+               onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="andalan-photo-placeholder" style="display:none">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+            Silverflex
+          </div>
+          <div class="andalan-photo-label">Silverflex</div>
+        </div>
+
+      </div>
+
     </div>
   </section>
 
