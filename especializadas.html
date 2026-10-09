@@ -12,17 +12,30 @@
 <style>
 /* ---- ALIANZAS PAGE ---- */
 .alianzas-hero {
-  padding: calc(var(--header-h) + 60px) 0 56px;
+  position: relative;
+  padding: calc(var(--header-h) + 48px) 0 48px;
   background: var(--c-navy-deep);
   text-align: center;
+  overflow: hidden;
 }
+.alianzas-hero-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 30%;
+  opacity: 0.18;
+  pointer-events: none;
+}
+.alianzas-hero .container { position: relative; z-index: 1; }
 .alianzas-hero .eyebrow { color: var(--c-gold); }
-.alianzas-hero h1 { color: #fff; margin-top: 10px; font-size: clamp(2rem, 4vw, 3rem); }
+.alianzas-hero h1 { color: #fff; margin-top: 10px; font-size: clamp(1.9rem, 4vw, 2.8rem); }
 .alianzas-hero p {
   color: rgba(255,255,255,0.72);
-  max-width: 620px;
-  margin: 18px auto 0;
-  font-size: 1.05rem;
+  max-width: 580px;
+  margin: 16px auto 0;
+  font-size: 1rem;
   line-height: 1.65;
 }
 
@@ -102,6 +115,27 @@
   width: 48px;
   height: 48px;
   opacity: 0.35;
+}
+
+/* Color accent per product */
+.product-row[data-color="propofol"] .product-accent-bar { background: #1B4F9A; }
+.product-row[data-color="propofol"] .product-number { color: #1B4F9A; }
+.product-row[data-color="propofol"] .product-tag { background: rgba(27,79,154,0.07); border-color: rgba(27,79,154,0.25); color: #1B4F9A; }
+
+.product-row[data-color="ketorolaco"] .product-accent-bar { background: #B8922A; }
+.product-row[data-color="ketorolaco"] .product-number { color: #B8922A; }
+.product-row[data-color="ketorolaco"] .product-tag { background: rgba(184,146,42,0.08); border-color: rgba(184,146,42,0.3); color: #9A7520; }
+
+.product-row[data-color="paracetamol"] .product-accent-bar { background: #8B1A2F; }
+.product-row[data-color="paracetamol"] .product-number { color: #8B1A2F; }
+.product-row[data-color="paracetamol"] .product-tag { background: rgba(139,26,47,0.07); border-color: rgba(139,26,47,0.25); color: #8B1A2F; }
+
+/* Accent bar on photo */
+.product-accent-bar {
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 4px;
+  border-radius: 0;
 }
 
 /* Info side */
@@ -226,11 +260,12 @@
 
   <!-- ============ HERO ============ -->
   <section class="alianzas-hero">
+    <img src="assets/alianzas/hero-lab.webp" alt="" class="alianzas-hero-bg" aria-hidden="true">
     <div class="container">
-      <p class="eyebrow">Importación directa · India</p>
-      <h1>Alianzas Estratégicas</h1>
+      <p class="eyebrow">Alianzas Estratégicas</p>
+      <h1>Productos de Importación Directa</h1>
       <p>
-        Importamos directamente desde laboratorios RIVECA en India, eliminando intermediarios.
+        Importamos directamente desde laboratorios RIVECA, eliminando intermediarios.
         Precios de origen real, trazabilidad completa y documentación regulatoria en orden.
       </p>
     </div>
@@ -239,25 +274,20 @@
   <!-- RIVECA brand bar -->
   <div class="riveca-brand-bar">
     <div class="container">
-      <span class="rib-badge">RIVECA · India</span>
+      <span class="rib-badge">RIVECA Pharma</span>
       <p>Importadores directos — documentación ARCSA, registros sanitarios y certificados de importación en regla.</p>
     </div>
   </div>
 
   <!-- ============ PRODUCTO 1: PROPOFOL ============ -->
-  <section class="product-row" id="propofol">
+  <section class="product-row" id="propofol" data-color="propofol">
     <div class="container">
       <div class="product-row-inner">
 
         <!-- Foto -->
         <div class="product-photo-wrap">
-          <!-- INSERTAR: assets/alianzas/propofol.jpg -->
-          <img src="assets/alianzas/propofol.jpg" alt="Propofol 10mg/ml — RIVECA"
-               onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
-          <div class="product-photo-placeholder" style="display:none;">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-            <span>Foto del producto<br>(assets/alianzas/propofol.jpg)</span>
-          </div>
+          <div class="product-accent-bar"></div>
+          <img src="assets/alianzas/propofol.jpg" alt="Propofol 10mg/ml — RIVECA">
         </div>
 
         <!-- Info -->
@@ -287,19 +317,14 @@
   </section>
 
   <!-- ============ PRODUCTO 2: KETOROLACO ============ -->
-  <section class="product-row alt" id="ketorolaco">
+  <section class="product-row alt" id="ketorolaco" data-color="ketorolaco">
     <div class="container">
       <div class="product-row-inner">
 
         <!-- Foto -->
         <div class="product-photo-wrap">
-          <!-- INSERTAR: assets/alianzas/ketorolaco.jpg -->
-          <img src="assets/alianzas/ketorolaco.jpg" alt="Ketorolaco 30mg/ml — RIVECA"
-               onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
-          <div class="product-photo-placeholder" style="display:none;">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-            <span>Foto del producto<br>(assets/alianzas/ketorolaco.jpg)</span>
-          </div>
+          <div class="product-accent-bar"></div>
+          <img src="assets/alianzas/ketorolaco.jpg" alt="Ketorolaco 30mg/ml — RIVECA">
         </div>
 
         <!-- Info -->
@@ -329,19 +354,14 @@
   </section>
 
   <!-- ============ PRODUCTO 3: PARACETAMOL ============ -->
-  <section class="product-row" id="paracetamol">
+  <section class="product-row" id="paracetamol" data-color="paracetamol">
     <div class="container">
       <div class="product-row-inner">
 
         <!-- Foto -->
         <div class="product-photo-wrap">
-          <!-- INSERTAR: assets/alianzas/paracetamol.jpg -->
-          <img src="assets/alianzas/paracetamol.jpg" alt="Paracetamol 10mg/ml — RIVECA"
-               onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
-          <div class="product-photo-placeholder" style="display:none;">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-            <span>Foto del producto<br>(assets/alianzas/paracetamol.jpg)</span>
-          </div>
+          <div class="product-accent-bar"></div>
+          <img src="assets/alianzas/paracetamol.jpg" alt="Paracetamol 10mg/ml — RIVECA">
         </div>
 
         <!-- Info -->
