@@ -18,12 +18,59 @@ if (navToggle && mainNav) {
 
 // ============ Marcar link activo según la página actual ============
 (function highlightActiveNav() {
-  const current = window.location.pathname.split('/').pop() || 'index.html';
+  // "/nosotros", "/nosotros.html" y "/nosotros/" cuentan como la misma página
+  const clean = p => '/' + p.replace(/\.html$/, '').replace(/^\/+|\/+$/g, '').replace(/^index$/, '');
+  const current = clean(window.location.pathname);
   document.querySelectorAll('.main-nav a').forEach(link => {
-    const href = link.getAttribute('href');
-    if (href === current || (current === '' && href === 'index.html')) {
+    if (clean(link.getAttribute('href')) === current) {
       link.classList.add('is-active');
     }
+  });
+})();
+
+// ============ Sombra del header al bajar ============
+(function initHeaderShadow() {
+  const header = document.querySelector('.site-header');
+  if (!header) return;
+  const update = () => header.classList.toggle('is-scrolled', window.scrollY > 8);
+  window.addEventListener('scroll', update, { passive: true });
+  update();
+})();
+
+// ============ Aparición suave al hacer scroll ============
+(function initReveal() {
+  if (!('IntersectionObserver' in window)) return;
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+  const selectors = [
+    '.section-head', '.category-card', '.catalog-cta', '.stats-item',
+    '.trust-item', '.process-step', '.faq-item', '.cta-band-inner',
+    '.timeline-item', '.value-card', '.cert-banner', '.fv-banner',
+    '.product-line-inner', '.product-row-inner', '.contact-info-card'
+  ];
+  const items = document.querySelectorAll(selectors.join(','));
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      const el = entry.target;
+      el.classList.add('is-visible');
+      observer.unobserve(el);
+      // Al terminar, quitar las clases para no interferir con los efectos hover
+      setTimeout(() => {
+        el.classList.remove('reveal', 'is-visible');
+        el.style.transitionDelay = '';
+      }, 900 + (parseFloat(el.style.transitionDelay) || 0) * 1000);
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+  items.forEach(el => {
+    // Escalonar las tarjetas hermanas para que entren una tras otra
+    const siblings = Array.from(el.parentElement.children).filter(s => s.matches(selectors.join(',')));
+    const index = siblings.indexOf(el);
+    if (index > 0) el.style.transitionDelay = Math.min(index, 6) * 0.08 + 's';
+    el.classList.add('reveal');
+    observer.observe(el);
   });
 })();
 
